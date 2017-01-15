@@ -1,0 +1,192 @@
+\chapter{Introduction and Background} \label{chap: LaneChapter1}
+\pagenumbering{arabic}
+
+This chapter gives an introduction to organic molecules and a brief background to their unique electronic and excitonic properties.
+
+\section{Motivation}
+
+With increased interest in organic semiconducting systems for many varied research and commercial applications, crystalline thin films of small molecules present an intriguing system for both fundamental and applied studies of electronic properties and exchange interactions in the larger field of organic electronics.  Their optical, transport and magnetic properties belong to an intermediate regime where well-established models fail to fully describe the electronic behavior and do not accurately predict the experimental observations.  
+
+The processing method, purity, and crystalline quality of the films themselves can also greatly impact exciton behavior.  With this in mind, understanding the nature of the dynamics of diffusion and delocalization of excitons (or electron-hole pairs) becomes a necessity for understanding and eventually controlling the behavior of these materials in organic electronic applications.  Coupling between polarized light and electronic states in crystalline ordered materials can give insight into directionally polarized excitons, orbital symmetries, exchange interactions, spin dynamics and even collective magnetic behavior through polarization-resolved spectroscopy.  Novel solution-processing deposition techniques in tandem with chemical synthesis design of small molecule soluble derivatives represent a viable avenue for exploring these excitons using organic analogues of semiconductor alloyed systems, where excitonic properties could be tunable through alloy concentration. 
+
+The main purpose of the work presented in this thesis is to study a system, and more specifically a family of molecules, which can be spectroscopically studied in order to extract insight into intermolecular interactions and exciton behavior, by using a systematic approach of thin film fabrication and a mixture of molecules to purposefully inhibit exciton delocalization and then begin tuning this behavior through mixtures of slightly different organic small molecules. 
+
+\section{Organic Molecules vs. Silicon}
+
+Inorganic silicon and gallium arsenide semiconductors have for decades dominated the conversation regarding semiconductors in  electronic applications, and for good reason.  The stability and performance of these materials for commercial uses was unparalleled for decades.  However, Tang's seminal 1986 paper using copper phthalocyanine as the main photon absorbing layer in an organic solar cell is widely seen as the tipping point to accepting organic molecules as an actual viable option for commercial applications (rather than purely a "research interest")\cite{Tang1986}.  This was then quickly followed by Tang and VanSlyke's paper on an organic eletroluminescent device, showing that organic molecules were not only efficient absorbers of photons, but also efficient emitters as well, with the additional benefits of fast response and low voltage drive still able to achieve quality emission\cite{Tang1987}.  The primary reason for the importance of these two papers is that up until around that time, organic materials had been mostly used only as passive layers (or insulators) and photoresists in actual device applications \cite{Shaw2001}.  Tang and VanSlyke showed that organic molecules could instead be implemented as the active part in devices (usually as a part of a donor/acceptor heterojunction), both as absorbing or emitting layers, and brought to the forefront of the scientific community a whole new class of materials that perhaps had not be seriously considered as viable for commercial applications.
+
+This sparked a renaissance of sorts, where organic molecules that had been fairly well-known and well-studied for decades now suddenly reemerged in applications that were never imagined for them.  Commercially, the reason that interest spiked so suddenly in these materials stemmed from two major points.  The primary benefit of most organic materials is that they are generally less expensive than their silicon counterparts to manufacture for the purposes of commercial applications, as well as the additional benefit of being biocompatible.  This of course is one of the most pertinent qualities for commercial applications, and is an area that organic electronics typically excel in.  While electronic and transport properties are still being improved, the cost-effectiveness and ease of processing is really the benchmark quality for why these materials continue to be of great interest \cite{Shaw2001}.  The second, and somewhat more recent development is on a broader level, the search for renewable energy sources that have little to no environmental impact, as many commercial and governmental organizations look to move away from more traditional energy sources that have limited stockpiles and increasing costs to acquire and refine \cite{Kippelen2009} \cite{Cao2014}.
+
+This research has continued since the 1970s and 1980s, specifically from the chemistry side where the properties of organic molecules are able to be tuned through chemical engineering, arguably culminating in Nobel Prize in Chemistry in 2000 for the recognition of the work of Heeger, MacDiarmid and Shirakawa (which actually began in the late 1970s) where they show the ability to tune properties of polymers (or plastics) through doping in order to actually change from an insulator to becoming electrically conductive  \cite{Shirakawa1977} \cite{Chiang1977} \cite{Chiang1978}, and the reporting of electroluminescence from conjugated polymers \cite{Burroughes1990} \cite{Friend1999} through chemical engineering as well.  It was in fact the ordering of the doped polyacetylene in the solid state that allowed for conductivity, and this idea of new and exciting properties as a result of adjusting molecular packing, side-chains \cite{Cornil2001}, and even doping in thin films and in bulk that has evolved throughout the entire field of organic electronics.  
+
+This has lead to the development of many novel device applications based on organic semiconductors\cite{Pisula2009} \cite{Liu2009},
+generally falling into a finite number of categories.  Those that involve the absorption of light as the primary function of the organic material, such as solar cells
+
+
+
+
+
+
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[height=11cm]{orgelec.png}
+	\end{center}
+	\begin{center}
+		\caption[Organic molecules in commerical devices]{\textit{a) Plastic Logic Ltd AMOLED display \cite{Ope}  b) HP and ASU flexible display created with self-aligned imprint lithography (SAIL) \cite{Hp} c) Samsung YOUM brand flexible OLED display \cite{Cacm} d) ITO-free organic solar cell from Holst Centre \cite{Intech}.}}
+		\label{fig:orgelec}
+	\end{center} 
+\end{figure}
+
+Pictured here are some of the more recent commercial developments where the flexibility of these materials is highlighted.  
+
+
+
+\subsection{Organic Small Molecules} 
+
+It is generally considered that there are two primary families of organic molecules used in device applications, polymers (or "plastics") \cite{Simpson2004} \cite{Duan2011} \cite{Paquin2013} and small molecules \cite{Kelley2004} \cite{Sergeyev2007}  \cite{vanderPoll2012}. Often times it is the $\pi$-orbital overlap of these molecules in the solid state that is responsible for enhancement of beneficial properties, including conductivity and transport of both free (electrons and holes) carriers and bound states (excitons) \cite{Shaw2001} \cite{Facchetti2011}.  The benefits of polymers themselves are well-studied by many other groups, even to the point of making hybrid silicon/organic polymer blends recently \cite{Jeong2012}, which can open a whole new approach to organic photovoltaics and is fascinating in and of itself, but is beyond the scope of what will be discussed here.  Instead, the focus of my research lies within the family of organic small molecules.    
+
+Throughout the past decade, organic small molecules have come to the forefront when discussing new trends in fabrication of organic electronic devices, and the fundamental experimental and theoretical studies aimed at understanding the physics of electrons in these devices and the quantum mechanical interactions taking place at the molecular level in these systems are of great interest \cite{Forrest2004} \cite{Podzorov2010} \cite{Cicoira2013} \cite{Orgiu2014}.  Application development of organic molecules in the solid state is often limited by the quality of the films themselves, where low carrier mobilities may be a result of large numbers of defects in the polymer-based materials\cite{Natali2012}.
+
+More specifically, certain families of conjugated ringed molecules (such as the acenes, the coronenes, and phthalocyanines) have shown great promise for flexible organic electronics and photovoltaic devices due to their unique broad visible/IR absorption bands and large carrier mobilities \cite{Schmidt-Mende2001} \cite{Sergeyev2007} \cite{Ahn2008} \cite{Anthony2006} \cite{Yamagata2011}.  Shown below in Figure \ref{fig:orgmol} are some of the most well-known organic small molecules. 
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[height=14cm]{orgmol.png}
+	\end{center}
+	\begin{center}
+		\caption{\textit{Common organic semiconductors.}}
+		\label{fig:orgmol}
+	\end{center} 
+\end{figure}
+
+
+
+Pentacene is usually the first name recognized when discussing organic small molecules, as it is arguably the most well-known and utilized due to large transistor hole mobilities in the solid state, (upwards of 5 $cm^2$/Vs in devices, and up to 10$^5$ $cm^2$/Vs at low temperatures \cite{Bredas2001}), where interestingly, the most promising avenue of improvement lies in surfaces treatment and purification\cite{Kelley2004}.  This is because 
+
+Other applications however, including Radio Frequency ID (RFID) applications often instead require voltage stability and off current as the most relevant features for organic materials  \cite{Gelinck2004}.  This then expanded to systems of tetracene, anthracene and rubrene, where the key to scaling up properties for devices and understanding macroscopic properties often relies heavily on understanding both free carriers, but also bound electron-hole pairs (or excitons) in these materials \cite{Lim2004} \cite{Yamagata2011} \cite{Peumans2003} \cite{Podzorov2004}, where purity of the solid plays an integral role is diffusion lengths, and whether dissociation of the exciton will occur to produce free charge carriers.   
+
+In addition to their cost-effectiveness and unique functionalities, organic small molecules are also viable due to stability and robustness, most showing little degradation after exposure to air even above room temperature.  More specifically, with regard to commercial applications, there are advantages organic small molecules possess over the more typical crystalline silicon or other inorganics used in many devices, and the gap in efficiency between them is closing quickly \cite{Claessens2008} \cite{delaTorre2007} \cite{Brabec2004}.   Recent commercial applications include, but are not limited to organic photovoltaics, organic LEDs, flexible organic displays and organic field effect transistors \cite{Berggren2007} \cite{O'Neill2011} \cite{Brabec2004} \cite{Kietzke2007} \cite{Heeger2006}\cite{Kippelen2009} \cite{Wang2012} \cite{Kaur2014} \cite{Cao2014}.   
+
+
+In the solid state, many organic $\pi$-conjugated small molecules including phthalocyanines, porphyrins, and perylenes can be viewed as building blocks that will self-assemble into arrays that allow probing of how the $\pi$-$\pi$ orbital interactions between adjacent molecules will influence larger macroscopic behavior in the crystal itself\cite{vanNostrum1996} \cite{Armstrong2000} \cite{Simpson2004}  \cite{Elemans2006} \cite{Knupfer2004} \cite{Hoeben2005} \cite{Bartolome2015}.  Therefore a determining factor for how these organic molecules will perform in device-related applications are their excitonic properties in the solid state, specifically in thin films \cite{Forrest1997} \cite{Menke2014} \cite{Ahn2008} \cite{Spano2006}, and understanding the dynamics of exciton diffusion and localization (or delocalization) becomes a necessity.
+
+For example, an ideal organic molecule-based solar cell needs to be able to absorb light efficiently its organic layer, therefore creating excitons. and in order to create free carriers in the conductive layer, a majority of those excitons be inhibited in their recombination, remaining separated even as they diffuse through the material \cite{Lemaur2005}.  As mentioned above, in organic molecules, photoexcitation leads to the formation of excitons, and generating free carriers would therefore not be a trivial process.  This is because the binding energy of these electron-hole pairs are typically greater than the room temperature thermal energy, therefore dissociation typically must occur in the presence of large electric fields at heterojunctions, the interface between two different layers, or by a combination of an organic polymer and a molecule \cite{Peumans2003} \cite{Lemaur2005} \cite{Terao2007}, which will either dissociate the exciton, creating free carriers, or by creating polaron pairs that eventually will overcome the Coulomb energy in the presence of an electric potential.         
+
+A variety of deposition techniques can be used to fabricate both bulk and thin film species of organic small molecules.  Early methods of film creation, such as chemical vapor deposition, plasma deposition etc, gave thin films or crystals that were often amorphous, with very little ordering, rendering them very limited in useful studies of interactions between molecules.  However, somewhat recently a new family of deposition techniques has allowed for rapid deposition that encourages long-range order in many of these organic small molecules.  These include, but are not limited to, spin-coating, blade-casting\cite{Sherman2015}, and a hollow pen-writing capillary technique\cite{Headrick2008} \cite{Cour2012} \cite{Cour2013} (which is my deposition method of choice for this work, and will be discussed in-depth later on). 
+
+Changes in the molecular packing and therefore structure in organic materials can greatly impact the properties in bulk or thin films, which is often possible through modifications of chemical structure \cite{Forrest2007} \cite{Sergeyev2007}.  Crystallization into the solid state can have drastic impact on the interactions between molecules, as opposed to the very weak interactions in solution\cite{Simpson2004}.  These increased interactions lead to absorption spectra that often significantly broadened and exhibit more peaks as compared to those in solution, as a result of these heightened interactions \cite{Grobosch2010} \cite{Sharp1973} \cite{Peisert2002}.  This appears to be a general behavior for many $\pi$-conjugated molecular systems in the crystal solid state, where degeneracy is lifted as a result of lowered symmetry (giving an in-plane and an out-of-plane optical polarization as a result of the primitive unit cell containing two inequivalent molecules), causing a Davydov splitting to be observed\cite{Hollebone1974} \cite{Davydov1962} \cite{Knupfer2004} \cite{Yamagata2011}.
+
+The processing method, the purity, and the crystalline quality of the films themselves can also greatly impact exciton diffusion and other electronic properties, as the enhanced interactions present in the solid state allow impurities to have elevated effects on the system\cite{Bardeen2014}. Chemical purification can help to improve purity and therefore crystal morphology, and even techniques such as thermal and solvent annealing, and solvent additives can influence properties in the solid state\cite{Mukherjee2015}. Charge mobility is directly linked to purity, as the quality of crystallinity and long-range order directly impacts free carrier\cite{Lunt2010} (which in organic solar cell applications is usually preferred), and even more specifically, the density of defects or traps in these solids can even influence or establish different regimes of transport at varying temperatures\cite{Podzorov2010}\cite{Lin2015}.  Now alternatively, in device applications such as organic light-emitting diodes, short diffusion lengths can often be preferred to prevent loss of radiative recombination to non-radiative sites within the solid\cite{Lin2015}, and ultimately one could imagine a spectrum between the extremes of domain purity vs. domain size that allows for a precise selection of properties based on pure, blended or alloyed materials\cite{Mukherjee2015}. Therefore understanding the effect of order and crystallinity on the electronic and excitonic properties of organic solids could eventually lead to the tuning of these properties and optimization for commercial applications based on the individual device need\cite{Lunt2010}.
+
+
+
+\section{Exciton Theory}
+
+The fundamental inherent property of organic semiconductors upon which all of the studies reported here are based is the formation of an exciton, or an electron-hole pair, generated most often as a result of photoexcitation\cite{Bredas2014}.  When discussing exciton theory, one must always begin with Yakov Frenkel, and his prediction in 1931 of what is now referred to as the Frenkel exciton.  A Frenkel exciton (where the radius separating the electron-hole pair is quite small as compared to the crystal structure) describes a system where the collection of molecules in the crystal are very weakly interacting.  That is, in the first approximation, any contribution from phonons is treated as a small perturbation, and therefore the collective excitation in the bulk is often compared directly the electronic excitation of a free single molecule (thus the common name for Frenkel excitons are molecular excitons).  So the excitation of an electron, promoting it most commonly from the Highest Occupied Molecular Orbital (HOMO) to the Lowest Unoccupied Molecular Orbital (LUMO), is often viewed as isolated from strong interactions from the rest of the crystal structure, due to the small radius and very localized nature of this exciton.    Shown in Figure \ref{fig:frenkel1} is a basic diagram of this promotion.  
+
+\vspace{5mm}
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[height=6cm]{frenkel1.png}
+\end{center}
+\begin{center}
+	\caption[Frenkel exction diagram]{\textit{Diagram of a Frenkel exciton: promotion of an electron to the Lowest Unoccupied Molecular Orbital (LUMO) from the Highest Occupied Molecular Orbital (HOMO) by an incoming excitation, and excitonic emission from the recombination of the electron-hole pair.}}
+	\label{fig:frenkel1}
+\end{center} 
+\end{figure}
+
+So Frenkel excitons can be viewed essentially as a series of almost non-interacting molecules in the crystal, where the wave-function overlap is almost negligible in this approximation.  However, studying the excitations in a bulk crystal itself in this approximation could give insight into the nature of intermolecular interactions (or lack thereof) in a solid, and determine structural and electronic properties.
+
+For spectroscopy purposes, the exciton is a very interesting phenomenon, due to the fact that when radiative recombination occurs at the band-gap, a phonon will be released, often giving important insight into the energy of the band-gap, or possibly the energy of higher states.  This excitation is described more explicitly in the equation below:
+
+\begin{equation}
+\psi_n^f = \varphi_n^f \prod_{m} \varphi_m^o  \quad \quad \quad    m\neq n 
+\label{eq:frenkel1}
+\end{equation}
+
+The product wavefunctions here are described by \ref{eq:frenkel1}, where $\psi_n^f$ is the envelope wave function, the product of the excited state electronic wavefunction of the single excited molecule with the electronic wavefunctions of the remaining molecules in the ground state\cite{Davydov1962}. 
+
+\vspace{5mm}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[height=8cm]{frenkel2.png}
+	\end{center}
+	\begin{center}
+		\caption{\textit{The single excited state molecule is isolated from the adjacent ground state molecules.  Adapted from Bardeen et al.\cite{Bardeen2014}.}}
+		\label{fig:frenkel2}
+	\end{center} 
+\end{figure}
+
+A periodic Bloch function is then added to the ensemble wavefunction to add boundary conditions in the form of some periodicity\cite{Davydov1962}.
+
+\begin{equation}
+|kf> \; = N^{-\frac{1}{2}} \sum_n \psi_n^f e^{ikn}  
+\label{eq:frenkel2}
+\end{equation}
+
+According to Davydov, and his oriented gas model, exciton states are often teated in an adiabatic approximation, where the frequencies (and therefore energies) are much larger than the influence of phonons, or lattice vibrations in the molecular crystals.  Therefore the zeroth approximation will assume no influence from phonons (that is, the molecules or lattice are rigidly fixed in space), and as a result the eigenvalues of the Hamiltonian operator will give the energies of the excitons themselves, where the Hamiltonian contains only two terms, the electron kinetic energy operators and the operators from the Coulomb interactions of the electrons in the crystal and the fixed atomic nuclei\cite{Davydov1962}.   
+
+Not long after Frenkel's prediction, in 1937, Gregory Wannier \cite{Wannier1937} and Nevill Francis Mott proposed a model where the radius (separation) of the electron-hole pair is in fact quite large, such that the wavefunction of the exciton could extend over the entire bulk volume of the crystal structure itself.  This would be used to describe behavior in solids with high dielectric constant, semiconductors, etc.  In this case, instead of referring to orbitals in a single molecule as we did with the Frenkel exciton, the Wannier exciton is described in terms of band theory, where an incoming excitation would promote an electron from the filled (or semi-filled) valence band of the crystal to the empty conduction band, as shown in Figure \ref{fig:wannier} below.
+
+\vspace{8mm}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[height=6cm]{wannier.png}
+	\end{center}
+	\begin{center}
+		\caption[Wannier exciton]{\textit{Diagram of a Wannier exciton: promotion of an electron to the conduction band from the valence band by an incoming excitation, and the excitonic emission from the recombination of the electron-hole pair.}}
+		\label{fig:wannier}
+	\end{center} 
+\end{figure}
+
+The band theory contribution comes from the fact that the molecules in the crystal structure are instead highly interacting, creating the band structure.  In this Wannier case, the promotion described above leaves behind a hole of positive charge (as before) where the interaction between the electron and hole has been weakened, but can be described in terms of excitations in a hydrogen-like model, with charge proportional to the dielectric constant, and a reduced mass that combines the new effective mass of the electron in the conduction band and the effective mass of the hole in the valence band\cite{Davydov1962}.  
+
+\begin{equation}
+Z = \frac{1}{\epsilon}
+\label{eq:Z}
+\end{equation}
+
+\begin{equation}
+\frac{1}{m_r} = \frac{1}{m_e^*}+\frac{1}{m_h^*}
+\label{eq:rmass}
+\end{equation}
+
+Where m$_e^*$ is the effective mass of an electron in the conduction band of the crystal, while m$_h^*$ is the effective mass of a hole in the valence band of the crystal.
+
+The three-dimensional normalized exciton wave functions for the Wannier model can be written in terms of the Laguerre polynomials as shown in \ref{eq:wannier}\cite{Haug}.
+
+\begin{equation}
+\psi_{n,l,m} (r) = - \sqrt{\Big(\frac{2} {na_{0}}\Big)^3 \frac{(n-l-1)!} {2n[(n+l)!]^3}} \rho^l e^{-\frac{\rho}{2}}L_{n+l}^{2n+1}(\rho) Y_{l,m}(\theta,\phi)
+\label{eq:wannier}
+\end{equation}
+
+Where $\rho$ is written in terms of the Bohr radius and the separation of the electron-hole pair as:
+
+\begin{equation}
+\rho = \frac{2r}{na_0}
+\label{eq:rho}
+\end{equation}
+
+
+However, even the theory of a single band gap that separates the valence and conduction bands in bulk systems is inadequate to describe the interactions and mixing in organic semiconducting molecular systems, as it does for most common inorganic semiconductors\cite{Bardeen2014}.  Since that time, some improvements have been made to these models in similar organic systems containing significant $\pi$-$\pi$ interactions, in which the coupling between the excitons and the lattice vibrations (or phonons) are weighted as heavily as the Coulombic interactions between the electron-hole pairs \cite{Hennessy1999} \cite{Hoffman2000} \cite{Gisslen2009}. 
+
+For instance, here the original Frenkel wavefunction is rewritten in Equation \ref{eq:hoffman}, with the Born-Oppenheimer approximation, so that the eletronic and vibrational parts of the wavefunction are included.
+
+\begin{equation}
+\psi_{n\nu}^f = \varphi_n^f \chi_n^{f \nu} \prod_{m} \varphi_m^o \chi_m^{oo}  \; \; \; \;  m\neq n      
+\label{eq:hoffman}
+\end{equation}
+
+The vibrational wave function of the $n$th molecule is described by $\chi_n^{f \nu}$ in its $f$th electronic state and $\nu$th vibrational state\cite{Hoffman2000}.  This allows for the phonon contribution to be weighted depending on intermolecular interactions, allowing for them to even be weighted as heavily as the Coulombic interaction piece, which is often true in the case of these strongly-interacting organic one-dimensional chains and crystals.   
+
+Ultimately, a large amount of work in this area still continues, with many attempting to reconcile experimental work with further in-depth theoretical models,  most notably by Hestand, Yamagata and Spano \cite{Yamagata2014} \cite{Hestand20151} \cite{Hestand20152} \cite{Hestand20153}, which goes even beyond the previously discussed treatment by including terms for charge-transfer excitons, as well a Hamiltonian that can address charge and energy transport in the presence of local vibronic coupling, but these treatments are beyond the scope of the work discussed here.   
+
+
+\section{Recent Work on Phthalocyanines}
+  
+Organic semiconductors, and more specifically organic $\pi$-conjugated small molecules provide a unique system in which to study even further the interactions described above.  This is due to the fact that many of these systems do not fall into the one of the two extremes mentioned above, either a very weakly interacting Frenkel picture, or a strongly interacting Wannier picture.
+
+As such, if one can use both chemical engineering as well as unique processing methods to purposefully create systems that vary the intermolecular spacing and therefore the interactions between molecules in a systematic way, allowing in principle probing dynamics that cannot be fully understood within a fully localized Davydov-like approach\cite{Davydov1962} \cite{Hestand20152}, great insight could be given into organic systems that fall into this intermediate regime. 

@@ -1,0 +1,98 @@
+\documentclass[12pt]{report}
+
+\usepackage[latin2]{inputenc}
+\usepackage{amsmath}
+\usepackage[pdftex]{graphicx}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{fancyhdr}
+\usepackage[left=1.5in]{geometry}
+\usepackage{geometry}
+%\pagestyle{fancyplain}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage{UVMThesisStyle-March2016}
+\usepackage{cancel}
+\usepackage{float}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{hyperref}
+
+% ==================================
+% Set up title page
+% ==================================
+%\includeonly{Chapterfour}
+%\includeonly{Appendix}
+\title{Excitonic States in Crystalline Organic Semiconductors: A Condensed Matter Approach}
+\author{Lane Wright Manning}
+\defensedate{March 25th, 2016}
+\dissertation                     %% or \thesis
+\doctorphilosophy               %% or \doctorphilosophy or \masterarts
+\matsci                          %% this is the only speciality defined.
+%\gradyear{2014}        %%The year in which the degree will be conferred
+\maygrad                           %% \maygrad or \octgrad or \marchgrad
+\advisor{Madalina Furis, Ph.D.}
+\readerone{Rory Waterman, Ph.D.}
+\readertwo{Adrian Del Maestro, Ph.D.}
+\chair{John M. Hughes, Ph.D.}
+\dean{Cynthia J. Forehand, Ph.D.}
+
+\begin{document}
+
+\maketitle
+%\makeacceptance
+\pagenumbering{roman}
+
+\begin{abstract}
+	
+\vspace{10mm}
+In this work, a new condensed matter approach to the study of excitons based on crystalline thin films of the organic molecule phthalocyanine is introduced.  The premise is inspired by a wealth of studies in inorganic semiconductor ternary alloys (such as AlGaN, InGaN, SiGe) where tuning compositional disorder can result in exciton localization by alloy potential fluctuations.  Comprehensive absorption, luminescence, linear dichroism and electron radiative lifetime studies were performed on both pure and alloy samples of metal-free octabutoxy-phthalocyanine ($\mathrm{H_{2}}$OBPc) and transition metal octabutoxy-phthalocyanines (MOBPc), where M = Mn, Co, Ni, and Cu.  Varying the ratios of the metal to metal-free OBPcs in all of these studies, as well as looking across a temperature range from 4 Kelvin up to room temperature is essential for quantifying the exciton wavefunction delocalization in crystalline thin films.  A comparative study is performed across organic aromatic ringed molecules of different sizes in the same family: phthalocyanine, naphthalocyanine and tetra-phenyl porphyrin.  In an analogy to nanocrystals and their size effects, variations in $\pi$-conjugated ring sizes imply an altering in the number of delocalized electrons, impacting the wavefunction overlap between $\pi$-$\pi$ orbitals along the perpendicular axis of neighboring molecules.  Finally, complementary measurements that assess crystallinity of the in-house deposited thin films, including individual grain absorption, small angle x-ray scattering images, polarized microscope images and a new unique LD microscopy dual imaging/luminescence technique are also discussed.
+
+
+\end{abstract}
+
+\begin{dedication}
+	
+	\flushright{ Insert dedication }
+	
+\end{dedication}
+
+\begin{acknowledgements}
+
+  Insert dedication
+
+\end{acknowledgements}
+
+\newpage
+
+\tableofcontents
+\newpage
+
+
+\listoffigures
+\newpage
+
+\listoftables
+\newpage
+
+\doublespacing
+
+\include{LaneChapter1}
+\include{LaneChapter2}
+\include{LaneChapter3}
+\include{LaneChapter4}
+\include{LaneChapter5}
+\include{LaneChapter6}
+\include{LaneAppendix}
+
+\newpage
+
+\bibliography{Lanebiblio}
+\bibliographystyle{unsrt}
+
+
+
+\end{document} 
