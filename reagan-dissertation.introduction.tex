@@ -39,20 +39,39 @@ Just some of the current uses include predicting elections \cite{tumasjan2010pre
 NLP and measures of sentiment are used to analyze consumption of information from the media, and societal level decisions are driven by this flow of public opinion online.
 Beyond individual and collective decisions, corporate interests demand an understanding of the public feeling towards their products.
 
+
+
 Advances in Artificial Intelligence (AI) have elucidated the distinction between problems that are hard for computers and those that are hard for humans---a difference that is not obvious at the outset.
 Sentiment is one such task: understanding the sentiment of our friends and colleagues through informal text is easy for us, but it is hard for algorithms.
+As we will see, machine learning (often broadly reffered to as AI) is finding uses in all areas of Natural Language Processing (NLP), including advancing the state-of-the-art in sentiment classification and sentiment dictionary creation.
 
 \subsection{Psychology of emotion}
 
 Many methods in existence aim to detect sentiment one-dimensionally, a range of the emotions that are positive to negative.
 While this pragmatic approach proves useful, it is conjectured that there are four \cite{jack2014dynamic}, six \cite{ekman1992argument}, or even eight \cite{plutchik1991emotions} core emotions in humans.
-The widely acknowledged six emotions identified by Paul Eckman are: happy, surprised, afraid, disgusted, angry, and sad.
+The widely acknowledged six emotions identified by Paul Eckman are:
+\begin{itemize}
+  \item happy,
+  \item surprised,
+  \item afraid,
+  \item disgusted,
+  \item angry,
+  \item and sad.
+\end{itemize}
 In Figures~\ref{fig:ekman} and \ref{fig:plutchik}, visualizations of these emotional dimensions are shown.
 While we do not expect that each of these six dimensions are orthogonal (as may be inferred from the Figures), a basis of more than two dimensions is likely necessary to represent the full range of emotion.
 Indeed, in Figure~\ref{fig:russell} the theory of \cite{russell1980circumplex} attempts to find the core dimensions of emotion using ``small data''.
 Each of these theories expands upon the two dimensions considered further here: happy and sad (positive and negative affect).
 More complex emotions can be constructed from combinations of these six.
 
+In addition to emotion, where \textit{valence}, \textit{arousal}, and \textit{dominance} are considered the affective properties of words, the semantic concepts (norms) that are measured include (see ):
+\begin{itemize}
+  \item \textit{valence},
+  \item \textit{arousal},
+  \item \textit{concreteness},
+  \item \textit{age of acquistion},
+  \item and \textit{dominance}.
+\end{itemize}
 %% \begin{figure}[tbp!]
 %%   \centering
 %%   \includegraphics[width=0.48\textwidth]{figures/}
@@ -66,6 +85,7 @@ More complex emotions can be constructed from combinations of these six.
   \includegraphics[width=0.48\textwidth]{figures/mccloud.jpg}
   \caption[]{
     The six emotions of \cite{ekman1992argument}, illustrated here by \cite{mccloud2006making}.
+    In princple, the entire range of human emotions can be constructed from this minimal ``basis'', e.g., the emotion \textit{delight} is the addition of \textit{joy} and \textit{surprise}.
   }
   \label{fig:ekman}
 \end{figure}
@@ -75,6 +95,8 @@ More complex emotions can be constructed from combinations of these six.
   \includegraphics[width=0.48\textwidth]{figures/Plutchik-wheel.png}
   \caption[]{
     Schematic of the eight emotions from \cite{plutchik1991emotions}.
+    The commonly known eight names (e.g., joy, etc.) are one row out from the center.
+    In addition to the six emotions of \cite{ekman1992argument} we find \textit{anticipation} and \textit{trust}.
   }
   \label{fig:plutchik}
 \end{figure}
@@ -120,34 +142,10 @@ To this end, we note the availability of datasets below and attempt to collect e
 In addition to these public datasets, some academic groups choose not to release their tagged data, and there are claims of very large datasets held by private companies in the sentiment analysis space.
 Given the time and cost associated with obtaining high quality training data, and the ubiquity of machine learning for sentiment analysis in industry, the training data itself is the ``secret sauce'' of these businesses.
 
-Stanford Twitter Sentiment used emoticons the infer the sentiment of tweets for machine learning task evaluation, but this is essentially just testing the machine learning methods for word embedding performance with this type of free-form text. Final version for Saif claims to have done manual tagging.
-Edinburgh Twitter Corpus, O'Connor datasets are just the tweets.
-Kaggle data is bad.
-Manually annotated datasets:
+
 \begin{table}
   {\tiny
-    \begin{tabular}{l | l | l | l | l}
-      \multicolumn{5}{c}{Twitter}\\
-      \hline
-      Short name & Description/Notes & Available & \# Samples & Reference\\
-      \hline
-      Sanders           & Manually tagged, 4 topics & Yes & & \cite{giachanou2016like}\\
-      HCR                 & Health Care Reform & Yes & & \cite{giachanou2016like}\\ %% from giachanou
-      OMD                & Obama-McCain Debate  & Yes & & \cite{giachanou2016like}\\ %% from giachanou
-      SS-Tweet         & Sentiment140 & \href{http://help.sentiment140.com/for-students}{Yes} & & \cite{giachanou2016like} \\ %% from giachanou , %% \verb|twitter4242.txt|
-      SemEval 2013 & & \href{https://www.cs.york.ac.uk/semeval-2013/}{Yes} & & \cite{giachanou2016like} \\ %% from giachanou
-      SemEval 2014 & & \href{http://alt.qcri.org/semeval2014/task9/}{Yes}  & & \cite{giachanou2016like} \\ %% from giachanou
-      SemEval 2015 & & \href{http://alt.qcri.org/semeval2015/task10/index.php?id=data-and-tools}{Yes}  & & \cite{giachanou2016like} \\ %% from giachanou
-      STS-Test         & & \href{http://help.sentiment140.com/for-students}{Yes} & & \cite{giachanou2016like}  \\
-      STS-Gold         & & Yes & & \cite{saif2013evaluation}\\ %% from giachanou %% , \verb|sts_gold_v03.zip|
-      DETC               & Dialogue Earth Corpus & No & & \cite{giachanou2016like} \\ %% from giachanou %%  Corpus, three sets: WA, WB, and GASP
-      ORT                 & Opinion Retrieval Twitter & \href{https://sourceforge.net/projects/ortwitter/}{Yes} & & \cite{luo2012opinion} \\ %% from ? \verb|Corpus.tar|
-      \hline
-      \multicolumn{5}{c}{}\\
-      \multicolumn{5}{c}{Reviews}\\
-      \hline
-      Short name & Description/Notes & Availability & \# Samples & Reference
-    \end{tabular}
+    \input{datasets}
   }
   \caption{Summary of publicly available Twitter datasets tagged with sentiment labels.
   In respect of Twitter's Terms of Service, lists of the Tweet IDs are provided, as well as a script to download the Tweets through Twitter's public API (note some data may not longer be available).}
@@ -172,11 +170,16 @@ Such a rule might be to consider negation words such as ``not'' to reverse the p
 Without standard benchmarks used by researchers who generate sentiment dictionaries, their individual rule choices are difficult to replicate, and we focus on studying the quality of the sentiment dictionary without using any rules.
 In this way, our comparisons are clearly relative, as sentence-level classification can be easily enhanced by simple rules (though the ranking of methods is not strongly affected) \cite{hutto2014vader}.
 
+Constructing sentiment dictionaries
+Supervised classifier from \cite{esuli2006sentiwordnet} and graph-based label propagation algorithms \cite{rao2009semi}.
+
 \subsection{Machine learning approaches}
 
 Machine learning (ML) approaches to sentiment analysis make explicit use of annotated data to train classifiers.
 State-of-the-art unsupervised ML using Neural Network (NN) word representations have proven successful as improving a wide variety of NLP tasks.
 Advances that have enabled their success rely upon corpora on the order of billions of words, and implementations that are efficient by making specific choices for network architecture and objective function.
+
+Deep learning: \cite{tang2014coooolll} induced Twitter sentiment lexicons using sentiment-specific word embeddings, obtained via distant supervision.
 
 \subsection{Related Natural Language Processing}
 
@@ -192,6 +195,24 @@ GAMBL, Genetic Algorithm Optimization of Memory-Based WSD \cite{decadt2004gambl}
 \begin{quote}
   GAMBL is a word expert approach to WSD in which each word expert is trained using memory- based learning. Joint feature selection and algo- rithm parameter optimization are achieved with a genetic algorithm (GA). We use a cascaded classi- fier approach in which the GA optimizes local con- text features and the output of a separate keyword classifier (rather than also optimizing the keyword features together with the local context features). A further innovation on earlier versions of memory- based WSD is the use of grammatical relation and chunk features. This paper presents the architecture of the system briefly, and discusses its performance on the English lexical sample and all words tasks in SENSEVAL-3.
 \end{quote}
+
+\cite{akkaya2009subjectivity}
+
+Rules:
+\cite{thelwall2012sentiment}
+\cite{hutto2014vader}
+Negation:
+\cite{kiritchenko2014sentiment}
+\cite{owoputi2013improved} develop an improved system PoS and tokenization with Twitter (informal text).
+
+\cite{agarwal2011sentiment} analyzed the usefulness of different features for TSA.
+\cite{agarwal2011sentiment} proposed a feature-based model and performed a comprehensive set of experiments to examine the usefulness of various features, including POS and lexicon features.
+The analysis showed that the most useful combination is the one of POS with the polarity of words.
+\cite{kouloumpis2011twitter}
+
+\subsection{Building corpus specific sentiment dictionaries}
+
+\input{\filenamebase.paper04}
 
 \subsection{Scalability}
 
@@ -248,10 +269,14 @@ Neither of these approaches scale to visualize more than individual sentences, a
   \label{fig:}
 \end{figure}
 
-\subsection{Benchmarking literature review}
+\subsection{Benchmarking literature}
 
 %% here let's try to include papers that really are attempts at benchmarks, in lit review fashions
 In this section we review recent efforts to benchmark sentiment analysis methods for their performance.\\
+
+\cite{pang2008opinion}
+To quote from \cite{pang2008opinion}, ``\cite{pang2008opinion} provide a comprehensive overview of the SA approaches using various types of data. However, this survey was published some time ago and does not cover recent developments and trends in the field.''
+\cite{liu2012survey}
 
 %% \bibentry{liu2012sentiment}
 %% this is the book
@@ -260,7 +285,14 @@ In this section we review recent efforts to benchmark sentiment analysis methods
 Synthesis Lectures on Human Language Technologies. San Rafael, CA:
 Morgan \& Claypool Publishers.}
 
+This book from Bing Liu provides a broad overview sentiment analysis, and the many different problems that it hopes to address as well as summaries of many common approaches.
+Liu provides a framework to understand the aspects of sentiment analysis, with a the varying levels of analysis (aspect, sentence, document level), and goals including classification and opinion summarization.
+In Chapter 8, a discussions of the methods for generating sentiment dictionaries is presented, and includes manual, dictionary-based, and corpus based approaches.
+Survey methods are not considered (the well-known ANEW dictionary is absent), and there is some confusion between methods that use a dictionary to propogate scores and those that use features of a corpus to propogate scores (\cite{velikovich2010viability} incorrectly classified as the former).
+While the references are extensive, no analysis is conducted to understand how the different approaches for generating sentiment dictionaries perform.
+Despite these shortcomings, the book is a broad and very useful guide to the landscape of sentiment analysis.
 
+\cite{tsytsarau2012survey}
 
 %% \bibentry{hutto2014vader}
 \noindent \textbf{Hutto, C.~J. and E.~Gilbert (2014).
@@ -274,6 +306,7 @@ While other papers that introduce dictionaries for sentiment analysis have made 
 In particular, Hutto and Gilbert compare their new method VADER to 11 other sentiment analysis methodologies.
 They compare to seven dictionary-based methods and four ML methods, and find favorable correlations between the classification of Tweets for the dictionary based methods.
 In addition they perform tests to measure the performance gains to be had using four rules, and word sense disambiguation, finding mean F1 performance gains of 2 points on individual Tweets.
+These rules are a subset of those employed by \cite{thelwall2012sentiment}.
 The comparisons between sentiment dictionaries focus on the classification performance, and do not provide any insight into what properties of the dictionaries contributes to their performance.
 In addition, no effort is made to use sentiment analysis as more than a binary classifer, a shortcoming that we will address.\\
 
@@ -282,8 +315,16 @@ In addition, no effort is made to use sentiment analysis as more than a binary c
 Like it or not: A survey of twitter sentiment analysis methods.
 {\em ACM Comput. Surv.\/}~{\em 49\/}(2), 28:1--28:41.}
 
-This survey from Giachanou \etal provides an overview of methods used to quantify sentiment on Twitter.
-The focus is on ML approaches, and no quantitative comparisons are made between the methods themselves.\\
+This extensive survey from Giachanou \etal provides an overview and categorization of methods used to quantify sentiment on Twitter.
+and no quantitative comparisons are made between the methods themselves.
+The broad categories of the methods they find are based on those from \cite{liu2012sentiment}:
+\begin{itemize}
+\item Machine Learning.
+\item Lexicon-Based.
+\item Hybrid (Machine Learning \& Lexicon-Based).
+\item Graph-Based.
+\end{itemize}
+The focus is on ML approaches (as they note: ``The majority of [Twitter Sentiment Analysis] methods use a method from the field of machine learning'').\\
 
 %% \bibentry{ribeiro2016sentibench}
 \noindent \textbf{Ribeiro, F.~N., M.~Ara{\'u}jo, P.~Gon{\c{c}}alves,
@@ -294,11 +335,19 @@ The focus is on ML approaches, and no quantitative comparisons are made between 
 
 This recent benchmark from Ribeiro \etal was published while our work was under review, having been submitted after our preprint was released on the arXiv.
 %% submitted Feb 03 from them
-Nevertheless, the comparisons made by Ribeiro \etal utilize a variety of methods, and provide measures of performance for all methods based on F1 scores.
+The comparisons made by Ribeiro \etal utilize a variety of methods, and provide measures of performance for all methods based on F1 scores.
 The methods selected include commerical, ML, and dictionary-based, and they are applied for four corpora.
 Beyond metrics of classification performance, no insight is provided into the reasons why certain methods out-perform others, nor is any focus on understanding texts through sentiment (or using visualization), the key tenets of our effort in Chapter 2.
 
+\cite{rosenthal2015semeval}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Emotional arcs}
 
@@ -331,7 +380,7 @@ While it can sometimes be useful to err on the side of causality, the fact remai
 
 %% http://channel101.wikia.com/wiki/File:HeroCycle-Campbell.png
 
-In Chapter 3 we consider previous work that finds between one and 36 different plot types: cite{campbell2008a,harris1959basic,abbott2008cambridge,booker2006a,polti1921thirty}.
+In Chapter 3 we consider previous work that finds between one and 36 different plot types: \cite{campbell2008hero,harris1959basic,abbott2008cambridge,booker2006seven,polti1921thirty}.
 Of these, the work of Campbell has gained popular attention as a result of the expositions of Dan Harmon (see \cite{raftery2011harmon}) in writing the show \textit{Community}, who in a series of articles elaborates on the ``monomyth''.
 The plot here is considered to exist on a circle, and the argument goes that all well constructed plots can be arranged to fit into this mold.
 The basic circle consists of 8 locations, starting and ending in the same place \ref{fig:harmon-four}.
@@ -403,10 +452,18 @@ Toward Automatic Character Identification in Unannotated Narrative Text \cite{va
   An improvement in character detection is realized on a small set of stories by using feature-vectors around entities, built from POS of sentence parse tree.
 \end{quote}
 
-Toward Automatic Role Identification in Unannotated Folk Tales \cite{valls2014toward2}.
+Toward Automatic Role Identification in Unannotated Folk Tales \cite{valls2014toward}.
 \begin{quote}
   Uses ``action matrices''.
 \end{quote}
+
+\cite{collier2011understanding}
+\cite{gelman2014stories}
+\cite{bovet2016predicting}
+\cite{mahoney2006tale}
+\cite{levy2008case}
+\cite{reece2016forecasting}
+
 
 Learning Script Knowledge with Web Experiments \cite{regneri2010learning}.
 \begin{quote}
@@ -504,7 +561,7 @@ Computational approaches to figurative language \cite{shutova2011computational}.
 
 With the distinction between plot, structure, and emotional trajectory in mind, there have also been attempts to discover plot using data driven methods.
 Using topic modeling, both \cite{schmidt2015plot} and \cite{jockers2013macroanalysis} find known patterns of plot across many thousand stories.
-In \cite{piper2015novel}, computational analysis is applied to realize the potential of distant reading (see \cite{moretti2013}) to find and test scholarly insights.
+In \cite{piper2015novel}, computational analysis is applied to realize the potential of distant reading (see \cite{moretti2013distant}) to find and test scholarly insights.
 In \cite{winston2011strong}, a system called ``Genesis'' is developed to compare plot summaries using casual connections between events, laid out as a the \textit{Strong Story Hypothesis}:
 \begin{quote}
   The mechanisms that enable humans to tell, understand, and recombine stories separate human intelligence from that of other primates.
@@ -522,8 +579,8 @@ http://polygraph.cool/hamilton/
 
 \subsection{Emotional arcs}
 
-With the same goals in pursuing the story shapes first elaborated by \cite{vonnegut1981}, in a series of blog posts \cite{jockers2016novel} lays out a strategy for generating emotional arcs and eventually finds six story types using hierarchical clustering.
-Our work in Chapter 3 is an continuation of a very different core methodology that we first propose in \cite{dodds2015a}.
+With the same goals in pursuing the story shapes first elaborated by \cite{vonnegut1981palm}, in a series of blog posts \cite{jockers2016novel} lays out a strategy for generating emotional arcs and eventually finds six story types using hierarchical clustering.
+Our work in Chapter 3 is an continuation of a very different core methodology that we first propose in \cite{dodds2015human}.
 As we note in Chapter 3 as well, the distinction between plot and emotional arc, as well as using sentiment analysis tools correctly distinguish our contributions from those of \cite{jockers2016novel}.
 
 \subsection{Debates in the digital humanities}

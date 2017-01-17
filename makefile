@@ -11,7 +11,7 @@ main: reagan-dissertation.*.tex reagan-dissertation-main*.tex
 	pdflatex reagan-dissertation-main
 	open reagan-dissertation-main.pdf
 rootbib: reagan-dissertation.*.tex reagan-dissertation-main*.tex
-	cp ~/papers/everything.bib .
+	cp ~/Box\ Sync/papers/everything.bib .
 	# with rootbib
 	sed -i .bak 's/\usepackage{chapterbib}/\usepackage[rootbib]{chapterbib}/' reagan-dissertation-main.tex
 	# cp reagan-dissertation-main-rootbib.tex reagan-dissertation-main.tex

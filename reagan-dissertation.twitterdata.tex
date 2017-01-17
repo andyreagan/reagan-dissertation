@@ -1,0 +1,78 @@
+%% Stanford Twitter Sentiment used emoticons the infer the sentiment of tweets for machine learning task evaluation, but this is essentially just testing the machine learning methods for word embedding performance with this type of free-form text.
+%% Final version for Saif claims to have done manual tagging.
+%% Edinburgh Twitter Corpus, O'Connor datasets are just the tweets.
+%% Kaggle data is purposefully distorted.
+
+%% data from riberio, saif, and giachanou
+
+\begin{tabular}{l | l | l | l | l}
+  \multicolumn{5}{c}{Twitter}\\
+  \hline
+  Short name & Description/Notes & Available & \# Samples & Reference\\
+  \hline
+  Sanders           & Manually tagged, 4 topics & Yes & & \cite{giachanou2016like}\\
+  HCR                 & Health Care Reform & Yes & & \cite{giachanou2016like}\\ %% from giachanou
+  OMD                & Obama-McCain Debate  & Yes & & \cite{giachanou2016like}\\ %% from giachanou
+  SS-Tweet         & Sentiment140 & \href{http://help.sentiment140.com/for-students}{Yes} & & \cite{giachanou2016like} \\ %% from giachanou , %% \verb|twitter4242.txt|
+  SemEval 2013 & & \href{https://www.cs.york.ac.uk/semeval-2013/}{Yes} & & \cite{giachanou2016like} \\ %% from giachanou
+  SemEval 2014 & & \href{http://alt.qcri.org/semeval2014/task9/}{Yes}  & & \cite{giachanou2016like} \\ %% from giachanou
+  SemEval 2015 & & \href{http://alt.qcri.org/semeval2015/task10/index.php?id=data-and-tools}{Yes}  & & \cite{giachanou2016like} \\ %% from giachanou
+  STS-Test         & & \href{http://help.sentiment140.com/for-students}{Yes} & & \cite{giachanou2016like,saif2013evaluation}  \\
+  STS-Gold         & & Yes & & \cite{saif2013evaluation}\\ %% from giachanou %% , \verb|sts_gold_v03.zip|
+  DETC               & Dialogue Earth Corpus & No & & \cite{giachanou2016like} \\ %% from giachanou %%  Corpus, three sets: WA, WB, and GASP
+  ORT                 & Opinion Retrieval Twitter & \href{https://sourceforge.net/projects/ortwitter/}{Yes} & & \cite{luo2012opinion} \\ %% from ? \verb|Corpus.tar|
+  \hline
+  \multicolumn{5}{c}{}\\
+  \multicolumn{5}{c}{Reviews}\\
+  \hline
+  Short name & Description/Notes & Availability & \# Samples & Reference
+\end{tabular}
+
+%% giachanou
+Edinburgh Twitter Corpus (ETC)
+Stanford Twitter Sentiment (STS) http://help.sentiment140.com
+Sanders Corpus (Sanders) http://www.sananalytics.com/lab/twitter-sentiment/
+O’Connor’s Corpus (OC)
+Health Care Reform (HCR)
+Obama-McCain Debate (OMD)
+Sentiment Strength Twitter Dataset (SS-Tweet)
+SemEval Datasets
+STS-Gold
+Dialogue Earth Twitter Corpus (DETC)
+
+%% riberio, have all of these!
+%% ,ribeiro2016sentibench
+aisopos_ntua, Tweets_RND_IV
+debate, Tweets_DBT
+nikolaos_ted, Comments_TED
+pang_movie, Reviews_I
+sanders, Tweets_SAN
+sentistrength_bbc, Comments_BBC
+sentistrength_digg, Comments_Digg
+sentistrength_myspace, Reviews_I
+sentistrength_rw, RW
+sentistrength_twitter, Tweets_RND_I
+sentistrength_youtube, Comments_YTB
+stanford_tweets,Tweets_STF
+tweet_semevaltest, Tweets_Semeval
+vader_amazon, Amazon
+vader_movie, Reviews_II
+vader_nyt, Comments_NYT
+vader_twitter, Tweets_RND_II
+english_dailabor, Tweets_RND_III
+%% not sure what to do with these
+irony
+rawposts
+sarcasm
+yelp_reviews
+
+%% saif
+%% ,saif2013evaluation
+STS-Test
+HCR
+OMD
+SS-Twitter
+Sanders
+GASP
+WAB
+SemEval

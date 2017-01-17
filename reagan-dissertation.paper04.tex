@@ -1,0 +1,88 @@
+Predicting the semantic orientation of adjectives \cite{hatzivassiloglou1997predicting}
+Learning subjective adjectives from corpora \cite{wiebe2000learning}
+Thumbs up or thumbs down?: semantic orientation applied to unsupervised classification of reviews \cite{turney2002thumbs}
+Trained a machine learning classifier \cite{pang2002thumbs}
+
+\cite{turney2003measuring}
+\cite{taboada2004analyzing}
+
+Construct sentiment dictionary from lexical graph \cite{kim2004determining}
+Construct sentiment dictionary from lexical graph \cite{hu2004mining}
+
+Manually constructed polarity lexicon \cite{das2007yahoo}
+
+Building Lexicon for Sentiment Analysis from Massive Collection of HTML Documents. \cite{kaji2007building}
+
+Construct sentiment dictionary from lexical graph \cite{blair2008building}
+
+\cite{bestgen2008building}
+
+Contrastive summarization: an experiment with consumer reviews\cite{lerman2009contrastive}
+
+Active learning for text classification \cite{esuli2009active}
+Semi-supervised learning of lexicon \cite{rao2009semi}
+
+\cite{velikovich2010viability}
+The viability of web-derived polarity lexicons
+Used n-grams from 4 billion web pages, and pruned a network with various heuristics contructed from context vectors (window size 6).
+Seeds words for positive and negative sentiment, and scores determined by shortest paths to the seed set, a ``graph propogation algorithm''.
+Compares favorably to manually constructed lexicon from \cite{wilson2005recognizing} and lexicon from WordNet in \cite{blair2008building}.
+
+\cite{bestgen2012checking}
+
+\cite{carenini2013multi}
+Multi-document summarization of evaluative text
+
+\cite{tang2014building}
+
+Other neural nets:
+\cite{kim2014convolutional}
+
+\cite{recchia2015reproducing}
+
+\cite{amir2016expanding}
+Expanding Subjective Lexicons for Social Media Mining with Embedding Subspaces
+Their approach to lexicon expansion ``consists of training models to predict the labels of pre-existing lexicons, leveraging unsupervised word embeddings as features'' \cite{amir2016expanding}.
+Correlations between their method and existing continuous datasets had a maximum of 0.68, an improvement over support vector regression.
+The resulting lexicon out-performed the methods compared against in Tweet classification, although not all methods were compared.
+
+\cite{hamilton2016inducing}
+Inducing Domain-Specific Sentiment Lexicons from Unlabeled Corpora
+Utilizes the approach set out in \cite{velikovich2010viability} to generate corpus specific word embeddings using SVD and propograte sentiment labels on inferred $k$-NN network.
+Measures uncertainty in predicted labels with bootstrapping procedure that holds out fractions of seed set (on the order of 10 words, holding out 2).
+Claims to measure performance with correlations to existing dataset of \cite{warriner2013norms}, but not found in results.
+
+\cite{williams2016boundary}
+Boundary-based MWE segmentation with text partitioning
+Trained model for partitioning using informed random partitioning with tagged data of the Wiktionary and annotated corpora.
+Can be run using text data, and POS tags, combining the output phrases for higher recall.
+Achieves state-of-the-art performance with flexible application to any text-based corpora.
+
+\cite{handler2016bag}
+Bag of What? Simple Noun Phrase Extraction for Text Analysis
+Uses patterns to match noun phrases using Finite State Transducer (FST) to find all matches for a given Finite State Grammar (FST), e.g., the pattern Adjective Noun Noun in the grammar.
+
+\cite{mandera2015useful}
+In \cite{van2016estimating} a review of the work by \cite{mandera2015useful} is provided: they evaluated how the performance of these computational approaches is influenced by the size of available norming data.
+To that end, the 13,915 words in the \cite{warriner2013norms} norms were split into a training set and a test set, using different splits (e.g., 90/10 or 50/50 ).
+Similarity indices between all words were obtained through applying LSA or PMI to a corpus comprising 385 million tokens.
+These were then used to predict the valence, arousal, and dominance of words, with neighborhood parameter k set to 30 (the optimal value described by \cite{bestgen2012checking}).
+They find that accuracy is somewhat reliant on the size of available norms. For example, when working with PMI-based similarity, increasing the training sample (i.e., the ratings that can contribute to the estimates) from 10 \% of the Warriner norms to 90 \% raises the correlation between the test sample and the norm ratings from .61 to .72 for valence, from .37 to .51 for arousal, and from .51 to .61 for dominance.
+(They also investigated a number of other extrapolation methods, all of which showed a similar or lower accuracy.)
+
+\cite{li2016understanding}
+Understanding Neural Networks through Representation Erasure
+\cite{hellrich2016bad}
+Bad Company---Neighborhoods in Neural Embedding Spaces Considered Harmful
+Random initialization undermines the reliability of the word2vec family of models for diachronic and synchronic tasks.
+SVD$_\textrm{PPMI}$, as proposed by \cite{levy2014neural}, was highlighted to avoid these shortcomings but was not tested.
+
+\cite{van2016estimating}
+Estimating affective word covariates using word association data
+Does just that for 14K dutch words, finding the best correlation between this method and human evaluation for $k$-NN algorithm (also tried ``Orientation towards Paradigm Words'').
+For $k=10$ obtained correlations for valence, arousal, and dominance of .91, .84, and .85.
+This performance is considerably better than was acheived by \cite{mandera2015useful} for English using corpus derived word similarity.
+
+\cite{rothe2016ultradense}
+Transform the embedding space via optimization of certain dimensions onto known semantic properties.
+Awesome. Apply SGD to learn a transformation $Q$ that orthogonalizes the embedding matrix $A$ under the constraint of establishing a sentiment dimension.
