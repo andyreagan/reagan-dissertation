@@ -1,193 +1,194 @@
 [{
-  "nickname": "ETC",
-  "fullname": "Edinburgh Twitter Corpus",
-  "datafile": "",
-  "reference": "giachanou2016like",
-  "source": "petrovic2010edinburgh",
-  "url": "",
-  "misc": "No annotations. One of the most well-known datasets for TSA is the Edinburgh Twitter Corpus, which spans from the November 11, 2009, to February 1, 2010. The 96 million tweets of the collection were collected through Twitter’s streaming API and is a representative set of the tweets posted during that period."
+    "nickname": "ETC",
+    "fullname": "Edinburgh Twitter Corpus",
+    "datafile": "",
+    "reference": "giachanou2016like",
+    "source": "petrovic2010edinburgh",
+    "url": "",
+    "misc": "No annotations. One of the most well-known datasets for TSA is the Edinburgh Twitter Corpus, which spans from the November 11, 2009, to February 1, 2010. The 96 million tweets of the collection were collected through Twitter’s streaming API and is a representative set of the tweets posted during that period."
 },
-{
-  "nickname": "OC",
-  "fullname": "O'Connor's Corpus",
-  "datafile": "",
-  "reference": "giachanou2016like",
-  "url": "",
-  "misc": "The O’Connor’s Corpus contains 1 billion tweets crawled during 2008 and 2009. The initial dataset was not annotated by sentiment. Researchers have used hashtags and emoticons as noisy labels to annotate the dataset by sentiment."
-},
-{
-  "nickname": "STS,Tweets_STF,STS-Test",
-  "fullname": "Stanford Twitter Sentiment",
-  "datafile": "STS.txt",
-  "reference": "giachanou2016like,ribeiro2016sentibench,saif2013evaluation",
-  "url": "http://help.sentiment140.com",
-  "source": "go2009twitter",
-  "misc": "According to their annotation process, a tweet is considered positive if it contains emoticons such as :), :-), : ), :D, or =), whereas a tweet is negative if it contains :(, :-(, or : (. This process resulted in a training set of 1.6 million annotated tweets. The testing set has 182 positive and 177 negative tweets that were manually annotated."
-},
-{
-  "nickname": "Sanders,Tweets_SAN,Sanders",
-  "fullname": "Sanders Corpus",
-  "datafile": "sanders.txt",
-  "reference": "giachanou2016like,ribeiro2016sentibench,saif2013evaluation",
-  "url": "http://www.sananalytics.com/lab/twitter-sentiment/",
-  "misc": ""
-},
-{
-  "nickname": "HCR,HCR",
-  "fullname": "Health Care Reform",
-  "datafile": "hcr.csv",
-  "reference": "giachanou2016like,saif2013evaluation",
-  "url": "",
-  "reference": "speriosu2011twitter",
-  "misc": "The HCR dataset consists of 2,515 manually annotated tweets of which 541 are positive, 1,381 negative, 470 neutral, 79 irrelevant, and 44 unsure tweets. The tweets were collected in March 2010 and are about the topic hcr. The collected tweets were manually annotated for polarity regarding to one out of the following different targets: health care reform, Obama, Democrats, Republicans, Tea Party, conservatives, liberals, and Stupak. The tweets were then split into three different sets, the training, the development, and the testing, each consisting of about 840 tweets."
-},
-{
-  "nickname": "OMD,Tweets_DBT,OMD",
-  "fullname": "Obama-McCain Debate",
-  "datafile": "OMD.csv",
-  "reference": "giachanou2016like,ribeiro2016sentibench,saif2013evaluation",
-  "url": "",
-  "misc": ""
-},
-{
-  "nickname": "SS-Tweet,Tweets_RN_I,SS-Twitter",
-  "fullname": "SentiStrength Twitter Dataset",
-  "datafile": "SS-Tweet.csv",
-  "reference": "giachanou2016like,ribeiro2016sentibench,saif2013evaluation",
-  "url": "http://help.sentiment140.com/for-students",
-  "misc": ""
-},
-{
-  "nickname": "SemEval,Tweets_Semeval,SemEval",
-  "fullname": "SemEval Datasets",
-  "datafile": "tweet_semevaltest.txt",
-  "reference": "giachanou2016like,ribeiro2016sentibench,saif2013evaluation",
-  "url": "",
-  "misc": ""
-},
-{
-  "nickname": "STS-Gold,STS-Gold",
-  "fullname": "STS-Gold",
-  "datafile": "sts_gold_tweet.csv",
-  "reference": "giachanou2016like,saif2013evaluation",
-  "url": "",
-  "misc": ""
-},
-{
-  "nickname": "DETC,DETC",
-  "fullname": "Dialogue Earth Twitter Corpus",
-  "datafile": "",
-  "reference": "giachanou2016like,saif2013evaluation",
-  "url": "http://www.dialogueearth.org",
-  "misc": "WAB and GASP are constructed from this in Saif."
-},
-{
-  "nickname": "Tweets_RND_IV",
-  "fullname": "aisopos_ntua",
-  "datafile": "aisopos_ntua.txt",
-  "reference": "ribeiro2016sentibench",
-  "url": "",
-  "misc": ""
-},
-{
-  "nickname": "Comments_TED",
-  "fullname": "TED Comments",
-  "datafile": "nikolaos_ted.txt",
-  "reference": "ribeiro2016sentibench",
-  "url": "",
-  "misc": ""
-},
-{
-  "datafile": "sentistrength_bbc.txt",
-  "fullname": "SentiStrength BBC Comments",
-  "nickname": "Comments_BBC",
-  "reference": "ribeiro2016sentibench",
-  "url": "",
-  "misc": ""
-},
-{
-  "datafile": "sentistrength_digg.txt",
-  "fullname": "SentiStrength Digg Comments",
-  "nickname": "Comments_Digg",
-  "reference": "ribeiro2016sentibench",
-  "url": "",
-  "misc": ""
-},
-{
-  "datafile": "sentistrength_myspace.txt",
-  "fullname": "SentiStrength Myspace Reviews",
-  "nickname": "Reviews_I",
-  "reference": "ribeiro2016sentibench",
-  "url": "",
-  "misc": ""
-},
-{
-  "datafile": "sentistrength_rw.txt",
-  "fullname": "SentiStrength Runners World Forum",
-  "nickname": "RW",
-  "reference": "ribeiro2016sentibench",
-  "url": "",
-  "misc": ""
-},
-{
-  "datafile": "sentistrength_youtube.txt",
-  "nickname": "Comments_YTB",
-  "fullname": "SentiStrength YouTube Comments",
-  "reference": "ribeiro2016sentibench",
-  "url": "",
-  "misc": ""
-},
-{
-  "nickname": "Amazon",
-  "fullname": "VADER Amazon Reviews",
-  "datafile": "vader_amazon.txt",
-  "reference": "ribeiro2016sentibench",
-  "source": "hutto2014vader",
-  "url": "",
-  "misc": ""
-},
-{
-  "nickname": "Reviews_II",
-  "fullname": "VADER Movie Reviews",
-  "datafile": "vader_movie.txt",
-  "reference": "ribeiro2016sentibench",
-  "source": "hutto2014vader",
-  "url": "",
-  "misc": ""
-},
-{
-  "nickname": "Comments_NYT",
-  "fullname": "VADER NYT Comments",
-  "datafile": "vader_nyt.txt",
-  "reference": "ribeiro2016sentibench",
-  "source": "hutto2014vader",
-  "url": "",
-  "misc": ""
-},
-{
-  "nickname": "Tweets_RND_II",
-  "fullname": "VADER Tweets",
-  "datafile": "vader_twitter.txt",
-  "reference": "ribeiro2016sentibench",
-  "source": "hutto2014vader",
-  "url": "",
-  "misc": ""
-},
-{
-  "nickname": "Tweets_RND_III",
-  "fullname": "?",
-  "datafile": "english_dailabor.txt",
-  "reference": "ribeiro2016sentibench",
-  "url": "",
-  "misc": ""
-},
-{
-  "nickname": "ORT",
-  "fullname": "Opinion Retrieval Twitter",
-  "datafile": "ORT.txt",
-  "reference": "luo2012opinion",
-  "url": "https://sourceforge.net/projects/ortwitter/",
-  "source": "luo2012opinion",
-  "misc": ""
-}
+ {
+     "nickname": "OC",
+     "fullname": "O'Connor's Corpus",
+     "datafile": "",
+     "reference": "giachanou2016like",
+     "url": "",
+     "misc": "The O’Connor’s Corpus contains 1 billion tweets crawled during 2008 and 2009. The initial dataset was not annotated by sentiment. Researchers have used hashtags and emoticons as noisy labels to annotate the dataset by sentiment."
+ },
+ {
+     "nickname": "STS,Tweets_STF,STS-Test",
+     "fullname": "Stanford Twitter Sentiment",
+     "datafile": "STS.txt",
+     "reference": "giachanou2016like,ribeiro2016sentibench,saif2013evaluation",
+     "url": "http://help.sentiment140.com",
+     "source": "go2009twitter",
+     "misc": "According to their annotation process, a tweet is considered positive if it contains emoticons such as :), :-), : ), :D, or =), whereas a tweet is negative if it contains :(, :-(, or : (. This process resulted in a training set of 1.6 million annotated tweets. The testing set has 182 positive and 177 negative tweets that were manually annotated."
+ },
+ {
+     "nickname": "Sanders,Tweets_SAN,Sanders",
+     "fullname": "Sanders Corpus",
+     "datafile": "sanders.txt",
+     "reference": "giachanou2016like,ribeiro2016sentibench,saif2013evaluation",
+     "url": "http://www.sananalytics.com/lab/twitter-sentiment/",
+     "misc": ""
+ },
+ {
+     "nickname": "HCR,HCR",
+     "fullname": "Health Care Reform",
+     "datafile": "hcr.csv",
+     "reference": "giachanou2016like,saif2013evaluation",
+     "url": "",
+     "source": "speriosu2011twitter",
+     "misc": "The HCR dataset consists of 2,515 manually annotated tweets of which 541 are positive, 1,381 negative, 470 neutral, 79 irrelevant, and 44 unsure tweets. The tweets were collected in March 2010 and are about the topic hcr. The collected tweets were manually annotated for polarity regarding to one out of the following different targets: health care reform, Obama, Democrats, Republicans, Tea Party, conservatives, liberals, and Stupak. The tweets were then split into three different sets, the training, the development, and the testing, each consisting of about 840 tweets."
+ },
+ {
+     "nickname": "OMD,Tweets_DBT,OMD",
+     "fullname": "Obama-McCain Debate",
+     "datafile": "OMD.csv",
+     "reference": "giachanou2016like,ribeiro2016sentibench,saif2013evaluation",
+     "url": "",
+     "misc": ""
+ },
+ {
+     "nickname": "SS-Tweet,Tweets_RN_I,SS-Twitter",
+     "fullname": "SentiStrength Twitter Dataset",
+     "datafile": "SS-Tweet.csv",
+     "reference": "giachanou2016like,ribeiro2016sentibench,saif2013evaluation",
+     "url": "http://help.sentiment140.com/for-students",
+     "misc": ""
+ },
+ {
+     "nickname": "SemEval,Tweets_Semeval,SemEval",
+     "fullname": "SemEval Datasets",
+     "datafile": "tweet_semevaltest.txt",
+     "reference": "giachanou2016like,ribeiro2016sentibench,saif2013evaluation",
+     "url": "",
+     "misc": ""
+ },
+ {
+     "nickname": "STS-Gold,STS-Gold",
+     "fullname": "STS-Gold",
+     "datafile": "sts_gold_tweet.csv",
+     "reference": "giachanou2016like,saif2013evaluation",
+     "url": "",
+     "misc": ""
+ },
+ {
+     "nickname": "DETC,DETC",
+     "fullname": "Dialogue Earth Twitter Corpus",
+     "datafile": "",
+     "reference": "giachanou2016like,saif2013evaluation",
+     "url": "http://www.dialogueearth.org",
+     "misc": "WAB and GASP are constructed from this in Saif."
+ },
+ {
+     "nickname": "Tweets_RND_IV",
+     "fullname": "aisopos_ntua",
+     "datafile": "aisopos_ntua.txt",
+     "reference": "ribeiro2016sentibench",
+     "url": "",
+     "misc": ""
+ },
+ {
+     "nickname": "Comments_TED",
+     "fullname": "TED Comments",
+     "datafile": "nikolaos_ted.txt",
+     "reference": "ribeiro2016sentibench",
+     "url": "",
+     "misc": ""
+ },
+ {
+     "datafile": "sentistrength_bbc.txt",
+     "fullname": "SentiStrength BBC Comments",
+     "nickname": "Comments_BBC",
+     "reference": "ribeiro2016sentibench",
+     "url": "",
+     "misc": ""
+ },
+ {
+     "datafile": "sentistrength_digg.txt",
+     "fullname": "SentiStrength Digg Comments",
+     "nickname": "Comments_Digg",
+     "reference": "ribeiro2016sentibench",
+     "url": "",
+     "misc": ""
+ },
+ {
+     "datafile": "sentistrength_myspace.txt",
+     "fullname": "SentiStrength Myspace Reviews",
+     "nickname": "Reviews_I",
+     "reference": "ribeiro2016sentibench",
+     "url": "",
+     "misc": ""
+ },
+ {
+     "datafile": "sentistrength_rw.txt",
+     "fullname": "SentiStrength Runners World Forum",
+     "nickname": "RW",
+     "reference": "ribeiro2016sentibench",
+     "url": "",
+     "misc": ""
+ },
+ {
+     "datafile": "sentistrength_youtube.txt",
+     "nickname": "Comments_YTB",
+     "fullname": "SentiStrength YouTube Comments",
+     "reference": "ribeiro2016sentibench",
+     "url": "",
+     "misc": ""
+ },
+ {
+     "nickname": "Amazon",
+     "fullname": "VADER Amazon Reviews",
+     "datafile": "vader_amazon.txt",
+     "reference": "ribeiro2016sentibench",
+     "source": "hutto2014vader",
+     "url": "",
+     "misc": ""
+ },
+ {
+     "nickname": "Reviews_II",
+     "fullname": "VADER Movie Reviews",
+     "datafile": "vader_movie.txt",
+     "reference": "ribeiro2016sentibench",
+     "source": "hutto2014vader",
+     "url": "",
+     "misc": ""
+ },
+ {
+     "nickname": "Comments_NYT",
+     "fullname": "VADER NYT Comments",
+     "datafile": "vader_nyt.txt",
+     "reference": "ribeiro2016sentibench",
+     "source": "hutto2014vader",
+     "url": "",
+     "misc": ""
+ },
+ {
+     "nickname": "Tweets_RND_II",
+     "fullname": "VADER Tweets",
+     "datafile": "vader_twitter.txt",
+     "reference": "ribeiro2016sentibench",
+     "source": "hutto2014vader",
+     "url": "",
+     "misc": ""
+ },
+ {
+     "nickname": "Tweets_RND_III",
+     "fullname": "DAI-Labor English MT",
+     "datafile": "english_dailabor.txt",
+     "reference": "ribeiro2016sentibench",
+     "source": "narr2012language",
+     "url": "",
+     "misc": "3 Ratings on Mech Turk for each of 7200 tweets"
+ },
+ {
+     "nickname": "ORT",
+     "fullname": "Opinion Retrieval Twitter",
+     "datafile": "ORT.txt",
+     "reference": "luo2012opinion",
+     "url": "https://sourceforge.net/projects/ortwitter/",
+     "source": "luo2012opinion",
+     "misc": ""
+ }
 ]

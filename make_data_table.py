@@ -4,14 +4,19 @@ from os.path import isfile,join
 
 if __name__ == '__main__':
     table_template = jinja2.Template(r"""
-\begin{tabular}{l | l | l | l | l}
+\begin{tabular}{l | l | l | l}
   \hline
-  Short name & \# Samples & Reference & Citation\\
+  Short name & Description & \# Samples & Referenced By\\
   \hline
-{% for dataset in data %}{{ dataset.nickname }} & {{ dataset.fullname }} & {{ dataset.N }} & \cite{ {{- dataset.reference -}} }\\
+{% for dataset in data %}{{ dataset.nickname }} & {{ dataset.fullname }} & {{ dataset.N }} & {{ dataset.reference }}\\
 {% endfor %}
 \end{tabular}
 """)
+    # {% for dataset in data %}{{ dataset.nickname }} & {{ dataset.fullname }} & {{ dataset.N }} & \cite{ {{- dataset.reference -}} }\\
+    shortrefs = [["giachanou2016like","G"],
+                 ["ribeiro2016sentibench","R"],
+                 ["saif2013evaluation","S"],
+                 ["luo2012opinion","L"]]
     f = open("datasets.json","r")
     data = json.loads(f.read())
     f.close()
@@ -22,6 +27,9 @@ if __name__ == '__main__':
         dataset["nickname"] = dataset["nickname"].replace("_",r"\_")
         fname = join("/Users/andyreagan/projects/2015/03-sentiment-comparison/data/twitter-labeled-tweets/aggregated",dataset["datafile"])
         print(fname)
+        for shortref in shortrefs:
+            dataset["reference"] = dataset["reference"].replace(shortref[0],shortref[1])
+        dataset["reference"] = dataset["reference"].replace(",",", ")
         if isfile(fname):
             f = open(fname,"r",encoding="utf8")
             dataset["N"] = str(len(f.read().split("\n")))

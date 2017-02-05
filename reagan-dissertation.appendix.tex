@@ -29,7 +29,25 @@ JSON
 File limitations
 Geo-parsing
 
+Using the straightforward dictionary-based average, we are able to process 100 million Tweets per day to serve the online, interactive time series of happiness for the Twitter gardenhose feed at \url{http://hedonometer.org}.
+The tweets are processed slightly faster than real time, with fours job running simultaneously on the Vermont Advanced Computing Core (VACC) every hour which take approximately 10 minutes to complete, each processing 15 minutes of Tweets from the previous hour.
+We choose to update the time series with daily averages, a time scale that provides enough data to filter out noisy signals while still showcasing a regular weekly pattern.
+This ``data mining'' is possible using hash-based dictionary lookups for sentiment scores for each word, and simple word tokenization of the Tweet text.
+We aggregate the scores for each 15 minutes into a word vector that represents the count of each word in the labMT sentiment dictionary, sorted by happiness.
+In addition to saving these word vectors, we also save a pickled version of the raw word-count hash table for all tokenized words appearing in the 15 minutes.
+
+Using 100 concurrent processes (more will over-saturate the network from file transfers with the IBM GPFS) we are able to search all tweets using the above methodology in less than two days.
+The entire database, approximately 370TB uncompressed, could be searched more efficiently by utilizing file storage schemas which localize files to eliminate networked file transfers.
+We estimate that a localized file system would allow linear scaling of the search, such that a full database search using the entire VACC would take on the order of 1 hour, by utilizing all 1896 processors across 152 nodes.
+More complicated rules for sentiment classification can only serve to slow the overall speed.
+As we investigate in greater detail in Chapter 2, some dictionaries employ word stems, which make the lookup between 10 and 1000 times slower.
+
+Machine learning techniques posses the advantage of to classify quickly after the training process.
+While it may take days, weeks, or even months to train a deep neural network, look-ups require very little added computational burden.
+
 \chapter{Infrastructure of Hedonometer.org}
+
+
 
 In this Appendix we document the processes that comprise the real-time
 visualization of Twitter happiness at Hedonometer.org.
