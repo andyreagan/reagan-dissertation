@@ -1,0 +1,10 @@
+reagan*.pdf
+*.bbl
+*.blg
+*.log
+*.out
+*.aux
+*.toc
+*.bak
+.DS_Store
+*~
