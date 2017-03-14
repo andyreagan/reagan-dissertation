@@ -12,7 +12,7 @@ Individual words encapsulate information and emotion as the building blocks that
 Beyond words, multi-word expressions (phrases), conceptual metaphor, and complicated grammar (syntax) coalesce to provide incredible expressive power.
 %% through both metaphor and ....
 %% (but not without bias).
-Attempts to quantify semantic content build atop sytnactic understand of language with the aim of transforming a model of meaning that has proven useful to our own cognitive machinery into something more readily applicable for another purpose (e.g., summarization by a computer).
+Attempts to quantify semantic content build atop syntactic understand of language with the aim of transforming a model of meaning that has proven useful to our own cognitive machinery into something more readily applicable for another purpose (e.g., summarization by a computer).
 One such goal of semantic understanding is to measure the sentiment expressed in written communication, which is broadly known as sentiment analysis.
 The next evolution of natural language systems will tackle the harder-yet problems of pragmatics, where narrative understanding and generation can enable common-sense reasoning on par with human intuition.
 
@@ -38,7 +38,7 @@ We refer to the emotional content in a written text broadly as the sentiment.
 In addition to the summaries given in recent review articles \citep{giachanou2016like}, the landscape of tools and technologies is expanding quickly and sentiment analysis systems are deployed to tackle important challenges.
 %% confusing
 %% Sentiment is semantic but there are semantics in language beyond sentiment that relate to context and the full meaning.
-As we will see, sentiment analysis is a subfield of NLP that can benefit from advancement in other realms of NLP as well (e.g., phrase partitioning).
+As we will see, sentiment analysis is a sub-field of NLP that can benefit from advancement in other realms of NLP as well (e.g., phrase partitioning).
 
 Applications of sentiment analysis span academia, industry, and government.
 Just some of the current uses include predicting elections \citep{tumasjan2010predicting}, product sales \citep{liu2007arsa}, stock market movement \citep{bar2011identifying}, and tracking public opinion \citep{cody2015climate}.
@@ -137,7 +137,7 @@ An alternative to basic, discrete emotions being the building blocks for all emo
 %%   \item \textit{age of acquisition},\vspace{-12pt}
 %%   \item and \textit{dominance}.
 %% \end{itemize}
-In the literature, the term \textit{valence} is used interchangably to mean the negative/positive emotional dimension.
+In the literature, the term \textit{valence} is used interchangeably to mean the negative/positive emotional dimension.
 %% \begin{figure}[tbp!]
 %%   \centering
 %%   \includegraphics[width=0.48\textwidth]{figures/}
@@ -174,7 +174,7 @@ We express caution in pursuing these latter goals using existing methodology, na
 We will examine in Chapter~\ref{chap:benchmarking} how dictionary based approaches are effective at the document level, but fail at the sentence level (and by extension fail at the entity level as well).
 Several examples of different sentences are also given in \cite{liu2012sentiment}, highlighting the difficulty of classifying individual sentences, and we share these examples here.
 
-The accuracy of classifying documents correctly as positve or negative is commonly measured using precision, recall, and F-score statistics, as in \cite{ribeiro2016sentibench}.
+The accuracy of classifying documents correctly as positive or negative is commonly measured using precision, recall, and F-score statistics, as in \cite{ribeiro2016sentibench}.
 These measures assess the classification accuracy, but do not attempt to assess the qualitative goal of achieving better understand of text with sentiment analysis (an area on which our work will build).
 Both of these goals can be assessed with ground truth data, and next we review publicly available data sets for sentiment evaluation.
 
@@ -600,8 +600,8 @@ In addition, they provide ratings using their method for 17,000 English words.\\
 
 \noindent \cite{tang2014building} train a neural network (NN) to learn phrase sentiment from phrase embeddings using a graph collected from Urban Dictionary and Tweets with emoticons.
 The Tweets with emoticons are used to embed all phrases in a two dimensional space with the loss function as a hybrid between word context (e.g., word2vec) and emoticon label context (happy or sad).
-A network of words is extracted from Urban Dictionary and used to apply label propogation for positive (good, \verb|:)|), negative (poor, \verb|:(|), and neutral words (when, he) across the network (which includes phrases).
-The word embeddings and scores from label propogation are used as features for a ternary sentiment classifier that is trained to predict scores from label propogation.
+A network of words is extracted from Urban Dictionary and used to apply label propagation for positive (good, \verb|:)|), negative (poor, \verb|:(|), and neutral words (when, he) across the network (which includes phrases).
+The word embeddings and scores from label propagation are used as features for a ternary sentiment classifier that is trained to predict scores from label propagation.
 Their system outperforms those tested for the SemEval 2013 competition by attaining a performance of macro F1 score .78, and their final dataset, TS-Lex, is composed of 65,685 words with sentiment scores and provided online.\\
 %% good summaries of previous research here too
 
@@ -625,7 +625,7 @@ The resulting lexicon out-performed other methods in Tweet classification, altho
 \newblock Inducing domain-specific sentiment lexicons from unlabeled corpora.
 \newblock {\em arXiv preprint arXiv:1606.02820\/}.}
 
-\noindent \cite{hamilton2016inducing} utilize the approach set out in \cite{velikovich2010viability} to generate corpus specific word embeddings using SVD and propagrating sentiment labels on inferred $k$-NN network.
+\noindent \cite{hamilton2016inducing} utilize the approach set out in \cite{velikovich2010viability} to generate corpus specific word embeddings using SVD and propagating sentiment labels on inferred $k$-NN network.
 The most novel part of the approach measures the uncertainty in predicted labels with bootstrapping procedure that holds out fractions of seed set (with a seed set of 10 words, holding out 2).
 They claim to measure performance with correlations to existing dataset of \cite{warriner2013norms}, but not found in results.\\
 
@@ -658,7 +658,7 @@ These results highlight the sensitive differences between word analogy tasks for
 This amounts to reducing the 300 or so dimensions typically used for vector space embedding into less than three dimensions.
 They apply Stochastic Gradient Descent (SGD) to learn a transformation $Q$ that orthogonalizes the embedding matrix $A$ under the constraint of establishing a sentiment dimension.
 This approach is more successful than embedding words directly into such a low dimension space, agreeing with previous work that has show vector embedding performs best with more than 100 dimensions, while extracting the relevant semantic information for sentiment analysis.
-For lexicon creation, their approach labeled ``Densifier'' achieves the statisically significant best performance on SemEval 2015 Task 10E with Kendall's $\tau$ of .654.\\
+For lexicon creation, their approach labeled ``Densifier'' achieves the statistically significant best performance on SemEval 2015 Task 10E with Kendall's $\tau$ of .654.\\
 
 Altogether, these approaches provide a roadmap and demonstrate the possibility of constructing a high-quality, general purpose, phrase based sentiment dictionary.
 
@@ -668,7 +668,7 @@ Lacking from the bulk of research that applies sentiment analysis, but crucial f
 %% (herein, \textit{vis}) 
 Despite limited attempts by researchers in sentiment analysis to use visualization to understand their analysis, online tools have been built to allow anyone to build simple visualizations in a straightforward way \citep{viegas2007manyeyes}.
 Motivation for our choice of dictionary-based methods along with a straightforward averaging algorithm for generating scores is that the analysis can be visualized to be understood.
-The averaging algorithm is linear and this allows for the comparison of the individual word contributinos to text sentiment classification, both enabling greater understanding and validating the analysis.
+The averaging algorithm is linear and this allows for the comparison of the individual word contributions to text sentiment classification, both enabling greater understanding and validating the analysis.
 
 An overview of previous approaches to text visualization can be found in \cite{heer2014text} and \cite{cao2016introduction}. We note the four goals of text visualization as identified by Heer: understanding, comparison, grouping, and correlation.
 Here, we focus on the task of understanding.
@@ -895,7 +895,7 @@ While it can sometimes be useful to err on the side of causality, the fact remai
 In Chapter~\ref{chap:emotional-arcs} we consider previous work that finds between one and 36 different plot types: \cite{campbell1949hero,harris1959basic,abbott2008cambridge,booker2006seven,polti1921thirty}.
 Of these, the work of \cite{campbell1991a} has gained popular attention as a result of the expositions of Dan Harmon in writing the show \textit{Community} \citep{raftery2011harmon}.
 In a series of online posts, Harmon elaborates on the ``monomyth'' and its incorporation into the writing of the \textit{Star Wars} movies \citep{volger1992writer}.
-The plot here is cyclical, and thusly represented on a circle, and the argument goes that all well constructed plots can be arranged to fit into this mold.
+The plot here is cyclical, and therefore represented on a circle, and the argument goes that all well constructed plots can be arranged to fit into this mold.
 The basic circle consists of 8 locations, starting and ending in the same place, and show a labeled visualization of these locations in Figure \ref{fig:harmon}.
 
 %% \begin{figure}[tbp!]
@@ -999,7 +999,7 @@ More recently, \cite{wu2016interactive} has made an interactive exploration of t
 
 To compare character networks across movies, \cite{ruths2016force} uses network alignment to map characters between the \textit{Stars Wars} movies \textit{The Force Awakens} and \textit{A New Hope} revealing both expected and surprising similarities.
 For example R2-D2 maps to BB-8 and Chewbacca maps to Chewbacca, as we might expect.
-However, the main characters have more suprising alignments from the interaction networks, with Luke mapping to Poe, Obi-wan mapping to Kylo Ren, and Darth Vader mapping Rey.
+However, the main characters have more surprising alignments from the interaction networks, with Luke mapping to Poe, Obi-wan mapping to Kylo Ren, and Darth Vader mapping Rey.
 A particular problem in using character networks that span an entire movie, TV show, or book is that multiple story lines can intersect in ways that are not accounted for by the method.
 \cite{bost2016narrative} examine conversation in TV shows using a smoothing of narration to overcome the multiple narrative problem, finding protagonists more readily than using simpler interaction networks.
 
@@ -1147,7 +1147,7 @@ We address the concerns raised in both of these critical takes in our work.
 Drawing directly from the suggestions from Schmidt, we utilize the Library of Congress classification to produce a better selection of texts from Project Gutenberg in our published manuscript, a notable improvement from the pre-print corpus he analyzes.
 In our treatment, we carefully consider the choice of a suitable null hypothesis to test whether there is structure in the emotional arcs of real stories.
 Our first pass used the emotional arcs of the same books with randomly shuffled words (``word salad'' books), for a corpora that has no narrative structure but the same emotional words.
-The final version of our null model generates stories from a bigram markov chain trained on the actual text.
+The final version of our null model generates stories from a bigram Markov chain trained on the actual text.
 These ``nonsense'' narratives have no real structure, but resemble written English.
 For more complete details and sample text from each method, see Section \ref{sec:construction}.
 Other reasonable attempts could consider shuffling sentences of paragraphs, however Brownian noise and arbitrary random walks are not sensible comparisons.
