@@ -29,7 +29,7 @@ JSON
 File limitations
 Geo-parsing
 
-Using the straightforward dictionary-based average, we are able to process 100 million Tweets per day to serve the online, interactive time series of happiness for the Twitter gardenhose feed at \url{http://hedonometer.org}.
+Using the straightforward dictionary-based average, we are able to process 100 million Tweets per day to serve the online, interactive time series of happiness for the Twitter gardenhose feed at \href{http://hedonometer.org}{http://hedonometer.org}.
 The tweets are processed slightly faster than real time, with fours job running simultaneously on the Vermont Advanced Computing Core (VACC) every hour which take approximately 10 minutes to complete, each processing 15 minutes of Tweets from the previous hour.
 We choose to update the time series with daily averages, a time scale that provides enough data to filter out noisy signals while still showcasing a regular weekly pattern.
 This ``data mining'' is possible using hash-based dictionary lookups for sentiment scores for each word, and simple word tokenization of the Tweet text.

@@ -1,5 +1,5 @@
 %% -*- LaTeX -*-
-\documentclass[12pt]{report}
+\documentclass[10pt]{report}
 
 \usepackage{thesis}
 
@@ -13,6 +13,7 @@
 %% not used
 %% \usepackage{subfigure}
 \usepackage[pdftex]{graphicx}
+\usepackage{rotating}
 \usepackage[titletoc,toc,title]{appendix}
 \usepackage{titlesec}
 \usepackage{titletoc}
@@ -49,7 +50,7 @@
 
 \usepackage{changepage}
 \newcommand{\pnastableadjust}{0}
-\newcommand{\revtexlatexswitch}{}
+\newcommand{\revtexlatexswitch}[2]{#2}
 \newcommand{\etal}{\textit{et al.}}
 \newcommand{\figuredir}{./}
 
@@ -128,8 +129,8 @@
 %this is accomplished using include commands
 %but, for things like the lit review (chapter 1) or an appendix, should use input so it does not get it's own references section
 
-\todo{all tables, figures strictly within margins}
-\todo{single space individual entries for bibliography}
+%% \todo{all tables, figures strictly within margins}
+%% \todo{single space individual entries for bibliography}
 \input{\filenamebase.introduction}
 
 %% input, because I'm using the full PDF
@@ -142,11 +143,13 @@
 \input{\filenamebase.conclusion}
 
 \pagebreak
+\singlespacing
 \addcontentsline{toc}{chapter}{Bibliography}
 %% overall bib for the standard format
 \bibliographystyle{chicago}
 \bibliography{everything}
 
+\doublespacing
 %% \input{\filenamebase.appendix}
 
 \end{document}

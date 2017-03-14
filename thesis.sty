@@ -30,31 +30,50 @@
 % ============================================
 \newcommand{\pvec}[1]{\vec{#1}\mkern2mu\vphantom{#1}}
 \definecolor{uvmgreen}{rgb}{0,0.35,0.23}
+\definecolor{softred}{RGB}{132,0,13}
+\definecolor{softgreen}{RGB}{19,111,12}
+\definecolor{softblue}{RGB}{10,0,192}
 \newcommand{\strike}[1]{ {\color{black}{\cancel{#1}} } }
 
 % ============================================
 % set style of hyperlinks
 % ============================================
 \hypersetup{
-    colorlinks=true,
-    citecolor=black,
+  colorlinks=true,
+    citecolor=softblue, %% citations
     linkbordercolor=black,
-    linkcolor=black}
+    linkcolor=softred, %% internal
+    urlcolor=softgreen,
+}
 
 % ============================================
 % set margins/geometry
 % ============================================
-\ifpdf
+%% https://www.sharelatex.com/learn/Page_size_and_margins
 \setlength{\pdfpagewidth}{8.5in}
 \setlength{\pdfpageheight}{11in}
-\else
-\fi
-
 \setlength{\paperwidth}{8.5in}
 \setlength{\paperheight}{11in}
 \setlength{\topmargin}{0in}
 \setlength{\textwidth}{6in}
-\setlength{\textheight}{8.06in}
+\setlength{\hoffset}{.5in}
+\setlength{\oddsidemargin}{0in}
+%% footskip, headheight, headsep
+%% 30, 12, and 25 pt each
+%% 25pt = 25pt* (100in/7227pt) = .3459in
+%% http://tex.stackexchange.com/questions/8260/what-are-the-various-units-ex-em-in-pt-bp-dd-pc-expressed-in-mm
+%% altogether, .927in
+%% set this at 9in - that many inches
+\setlength{\textheight}{8.072in}
+
+%% geometry simplifies this too much
+%% \usepackage{geometry}
+%%  \geometry{
+%%    letterpaper,
+%%    total={6in,8.06in},
+%%    left=1.5in,
+%%    top=1in,
+%%  }
 
 %% \setlength{\cftsubsecindent}{2cm}
 %% \setlength{\cftsubsubsecindent}{4cm}
@@ -97,28 +116,29 @@
     %% \vskip 2em
     \begin{center}
         {\LARGE \textsc{ \@title } \par}
-        \vskip 2em
+        \vskip 5em
         \doublespacing
         {
             \@thesistype\ Presented\\
-	\vskip 2em
+	    %% \vskip 2em
             by\\
             \@author\\
             to\\
             The Faculty of the Graduate College\\
             of\\
             The University of Vermont\\
-            \vskip 2em
+            \vskip 5em
             \singlespacing
             In Partial Fulfillment of the Requirements\\
             for the Degree of \@degreetype\\
             Specializing in \@spectype\\
-            \vskip 1em
+            \vskip 3em
             \@gradmonth, \number\year\par
         }
     \end{center} \par
 
-	\vskip 2em
+    %% \vskip 3em
+    \vfill
     	\begin{flushright}
 	\singlespacing
 	 Defense Date: \@defensedate\\
@@ -183,10 +203,10 @@
 \newenvironment{citationspage}{
     %% \section*{Citations}
   %% \addcontentsline{toc}{section}{Acknowledgements}
-    \begin{center}
-    {\LARGE \sc Citations \par}
+    %% \begin{center}
+    {\noindent \Large \sc \hyperlink{toc}{Citations} \par}
     \singlespacing
-  \end{center}
+  %% \end{center}
     }{
     \newpage
 }
@@ -195,10 +215,10 @@
 \renewenvironment{abstract}{
   \thispagestyle{empty}
   %% \section*{Abstract}
-      \begin{center}
-    {\LARGE \sc Abstract \par}
+      %% \begin{center}
+    {\noindent \Large \sc \hyperlink{toc}{Abstract} \par}
     \singlespacing
-      \end{center}
+      %% \end{center}
     \singlespacing
 }{
     \pagenumbering{roman}
@@ -207,10 +227,10 @@
 
 % set up list of figures Environment
 \renewcommand\listoffigures{%
-      \begin{center}
-    {\LARGE \sc \listfigurename \par}
+      %% \begin{center} 
+    {\noindent \Large \sc \listfigurename \par}
     \singlespacing
-      \end{center}
+      %% \end{center}
     %% \section*{
     %% \@mkboth{}{}}%
     \@starttoc{lof}%
@@ -220,10 +240,10 @@
 
 % set up list of tables Environment
 \renewcommand\listoftables{%
-        \begin{center}
-    {\LARGE \sc \listtablename \par}
+        %% \begin{center}
+    {\noindent \Large \sc \listtablename \par}
     \singlespacing
-      \end{center}
+      %% \end{center}
     %% \section*{\listtablename
     %% \@mkboth{}{}}%
     \@starttoc{lot}%
@@ -244,34 +264,38 @@
 \renewcommand\tableofcontents{%
     %% \section*{\contentsname
   %% \@mkboth{}{}}%
-      \begin{center}
-    {\LARGE \sc \contentsname \par}
+  %% \begin{center}
+  \phantomsection 
+  \hypertarget{toc}{}
+    {\noindent \Large \sc \hyperlink{toc}{\contentsname} \par}
     \singlespacing
-      \end{center}
+    %% \end{center}
+    {\hypersetup{linkcolor=black}
     \@starttoc{toc}%
-    \newpage
+    \newpage}
 }
 
 % ==========================================
 % set up title styles
 % ==========================================
 % chapters
+
 \titleformat{\chapter}[display]
-{\bf\LARGE\sc}
-{\chaptertitlename\ \thechapter}
+{\bf\Large\sc}
+{\chaptertitlename\ \hyperlink{toc}{\thechapter}}
 {10pt}
 {\bf\LARGE\sc}
 
 % sections
 \titleformat{\section}
 {\bfseries\Large\sc}
-{\thesection}
+{\hyperlink{toc}{\thesection}}
 {1em}{}
 
 % subsections
 \titleformat{\subsection}
 {\bfseries\large\sc}
-{\thesubsection}
+{\hyperlink{toc}{\thesubsection}}
 {1em}{}
 
 % ==============================================================
