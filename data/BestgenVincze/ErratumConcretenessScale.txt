@@ -1,0 +1,1 @@
+Contrarily to what is written in the paper (p. 1000), concreteness ratings were provided by 35 participants on a 7-point scale that ranged from abstract (1) to concrete (7). I would like to thank Ryan Boyd (Department of Psychology, North Dakota State University, http://ryanb.cc/) for pointing out this error.
