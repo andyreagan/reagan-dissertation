@@ -5,7 +5,7 @@
 
 Throughout the course of my studies at the University of Vermont,
 I have enjoyed the collaborative research environment
-afforded by the Computational Story Lab.
+afforded by the Computational Story Lab \footnote{footnotes working fine}.
 As a result of these collaborations, I have assisted in the preparation of 10 other research papers.
 I have variously done data visualization work, curated data from our Twitter database, built interactive online appendices, and assisted in performing mathematical analysis.
 In this Chapter, I detail my contributions to each of these 10 papers, beginning with the paper abstract and then discussing my personal contribution.
@@ -23,17 +23,18 @@ The first paper is \textit{Collective Philanthropy: Describing and Modeling the 
 \subsection{Abstract}
 \begin{quote}
   Reflective of income and wealth distributions,
-  philanthropic gifting appears to follow an approximate power-law size distribution as measured by the size of gifts received by individual institutions
-We explore the ecology of gifting by analysing data sets of individual gifts for a diverse group of institutions dedicated to education, medicine, art, public support, and religion
-We find that the detailed forms of gift-size distributions differ across but are relatively constant within charity categories
-We construct a model for how a donor's income affects their giving preferences in different charity categories, offering a mechanistic explanation for variations in institutional gift-size distributions
+  philanthropic gifting appears to follow an approximate power-law size distribution as measured by the size of gifts received by individual institutions.
+We explore the ecology of gifting by analysing data sets of individual gifts for a diverse group of institutions dedicated to education, medicine, art, public support, and religion.
+We find that the detailed forms of gift-size distributions differ across but are relatively constant within charity categories.
+We construct a model for how a donor's income affects their giving preferences in different charity categories, offering a mechanistic explanation for variations in institutional gift-size distributions.
 We discuss how knowledge of gift-sized distributions may be used to assess an institution's gift-giving profile, to help set fundraising goals, and to design an institution-specific giving pyramid.
 \end{quote}
 
 \subsection{Contribution}
 
-In this paper I prepared final versions of each visualization in the paper, working from the initial conceptions by both Professor Dodds and by Gottesman, and working closely with Professor Dodds in their preparation.
+In this paper I prepared final versions of each visualization in the paper, working from the initial designs from both Professor Dodds and Bill Gottesman, and working closely with Professor Dodds in their preparation.
 Additionally and at the request of the reviewers, I performed the statistical tests for support of power law distributions discussed in the paper, and included in the Appendix.
+In addition to testing for support of power law distributions using the MLE estimator \cite{clauset2009b}, I 
 
 \pagebreak
 
@@ -44,7 +45,11 @@ Paper number two is \textit{Shadow networks: Discovering hidden nodes with model
 \subsection{Abstract}
 \begin{quote}
   %% James P. Bagrow, Suma Desu, Morgan R. Frank, Narine Manukyan, Lewis Mitchell, Andrew Reagan, Eric E. Bloedorn, Lashon B. Booker, Luther K. Branting, Michael J. Smith, Brian F. Tivnan, Christopher M. Danforth, Peter S. Dodds, Joshua C. Bongard
-  Complex, dynamic networks underlie many systems, and understanding these networks is the concern of a great span of important scientific and engineering problems. Quantitative description is crucial for this understanding yet, due to a range of measurement problems, many real network datasets are incomplete. Here we explore how accidentally missing or deliberately hidden nodes may be detected in networks by the effect of their absence on predictions of the speed with which information flows through the network. We use Symbolic Regression (SR) to learn models relating information flow to network topology. These models show localized, systematic, and non-random discrepancies when applied to test networks with intentionally masked nodes, demonstrating the ability to detect the presence of missing nodes and where in the network those nodes are likely to reside.
+  Complex, dynamic networks underlie many systems, and understanding these networks is the concern of a great span of important scientific and engineering problems.
+  Quantitative description is crucial for this understanding yet, due to a range of measurement problems, many real network datasets are incomplete.
+Here we explore how accidentally missing or deliberately hidden nodes may be detected in networks by the effect of their absence on predictions of the speed with which information flows through the network.
+We use Symbolic Regression (SR) to learn models relating information flow to network topology.
+  These models show localized, systematic, and non-random discrepancies when applied to test networks with intentionally masked nodes, demonstrating the ability to detect the presence of missing nodes and where in the network those nodes are likely to reside.
 \end{quote}
 
 \subsection{Contribution}
@@ -52,11 +57,11 @@ Paper number two is \textit{Shadow networks: Discovering hidden nodes with model
 This paper is the result of a multi-day intensive collaboration called a Flash Mob Research Event.
 The format is one or two days of everyone in the same room, brain storming how to tackle an important open question.
 An outline of the paper is written, and after the event each member works to complete their part in carrying out the research idea.
-My responsibility was to build reciprocal reply network from Twitter data, in an effort to measure information flow over the network.
+My responsibility was to build reciprocal reply networks from Twitter data, in an effort to measure information flow over the network.
 The network construction proceeded in three steps: (1) build a network using replies, (2) measure information flow over this reciprocal reply network, and (3) collect edges in the network for the actual information flow.
 Each step of the construction would be carried out over a number of days, and using a single note on the VACC, we were able to build networks in memory for a total of 9 days.
 These 9 days were considered for combinations 3/3/3 or 4/4/1 days, respectively.
-These data were used a real world test, to accompany testing of simulated data.
+These data were used in a real world test, to accompany testing of simulated data.
 
 \section{Human language reveals a universal positivity bias}
 
@@ -65,14 +70,18 @@ Paper number three is \textit{Human language reveals a universal positivity bias
 \subsection{Abstract}
 \begin{quote}
   %% Peter Sheridan Dodds, Eric M. Clark, Suma Desu, Morgan R. Frank, Andrew J. Reagan, Jake Ryland Williams, Lewis Mitchell, Kameron Decker Harris, Isabel M. Kloumann, James P. Bagrow, Karine Megerdoomian, Matthew T. McMahon, Brian F. Tivnan, Christopher M. Danforth
-  Using human evaluation of 100,000 words spread across 24 corpora in 10 languages diverse in origin and culture, we present evidence of a deep imprint of human sociality in language, observing that (1) the words of natural human language possess a universal positivity bias; (2) the estimated emotional content of words is consistent between languages under translation; and (3) this positivity bias is strongly independent of frequency of word usage. Alongside these general regularities, we describe inter-language variations in the emotional spectrum of languages which allow us to rank corpora
+  Using human evaluation of 100,000 words spread across 24 corpora in 10 languages diverse in origin and culture, we present evidence of a deep imprint of human sociality in language, observing that
+  (1) the words of natural human language possess a universal positivity bias;
+  (2) the estimated emotional content of words is consistent between languages under translation;
+  and (3) this positivity bias is strongly independent of frequency of word usage.
+  Alongside these general regularities, we describe inter-language variations in the emotional spectrum of languages which allow us to rank corpora.
 We also show how our word evaluations can be used to construct physical-like instruments for both real-time and offline measurement of the emotional content of large-scale texts.
 \end{quote}
 
 \subsection{Contribution}
 
 In this paper I built the online appendices and performed additional tests of our method for building the sentiment timeseries for books (measuring their emotional arcs).
-This includes building a fully interactive version of an application of this dataset to analyze the emotional arcs of stories, which was done for a selection of the Western Canon and Project Gutenberg books.
+This included building a fully interactive version of an application of this dataset to analyze the emotional arcs of stories, which was done for a selection of the Western Canon and Project Gutenberg books.
 In particular, we analyzed the emotional arc for these books in their original language, providing translations of the word shifts graphs into English.
 The translations relied upon the translations of Google Translate, as curated by Eric Clark.
 The additional statistical tests amounted to randomly shuffling the words in each book which we showcased, to demonstate that the emotional arcs were meaningful.
@@ -84,14 +93,14 @@ Paper number four is \textit{Climate change sentiment on Twitter: An unsolicited
 \subsection{Abstract}
 \begin{quote}
   %% Emily M. Cody, Andrew J. Reagan, Lewis Mitchell, Peter Sheridan Dodds, Christopher M. Danforth
-  The consequences of anthropogenic climate change are extensively debated through scientific papers, newspaper articles, and blogs
-Newspaper articles may lack accuracy, while the severity of findings in scientific papers may be too opaque for the public to understand
-Social media, however, is a forum where individuals of diverse backgrounds can share their thoughts and opinions
-As consumption shifts from old media to new, Twitter has become a valuable resource for analyzing current events and headline news
-In this research, we analyze tweets containing the word "climate" collected between September 2008 and July 2014
-Through use of a previously developed sentiment measurement tool called the Hedonometer, we determine how collective sentiment varies in response to climate change news, events, and natural disasters
-We find that natural disasters, climate bills, and oil-drilling can contribute to a decrease in happiness while climate rallies, a book release, and a green ideas contest can contribute to an increase in happiness
-Words uncovered by our analysis suggest that responses to climate change news are predominately from climate change activists rather than climate change deniers, indicating that Twitter is a valuable resource for the spread of climate change awareness.
+  The consequences of anthropogenic climate change are extensively debated through scientific papers, newspaper articles, and blogs.
+Newspaper articles may lack accuracy, while the severity of findings in scientific papers may be too opaque for the public to understand.
+Social media, however, is a forum where individuals of diverse backgrounds can share their thoughts and opinions.
+As consumption shifts from old media to new, Twitter has become a valuable resource for analyzing current events and headline news.
+In this research, we analyze tweets containing the word "climate" collected between September 2008 and July 2014.
+Through use of a previously developed sentiment measurement tool called the Hedonometer, we determine how collective sentiment varies in response to climate change news, events, and natural disasters.
+We find that natural disasters, climate bills, and oil-drilling can contribute to a decrease in happiness while climate rallies, a book release, and a green ideas contest can contribute to an increase in happiness.
+Words uncovered by our analysis suggest that responses to climate change news are predominantely from climate change activists rather than climate change deniers, indicating that Twitter is a valuable resource for the spread of climate change awareness.
 \end{quote}
 
 \subsection{Contribution}
@@ -108,10 +117,16 @@ The fifth paper is \textit{Reply to Garcia et al.: Common mistakes in measuring 
 \subsection{Abstract}
 \begin{quote}
   %% P. S. Dodds, E. M. Clark, S. Desu, M. R. Frank, A. J. Reagan, J. R. Williams, L. Mitchell, K. D. Harris, I. M. Kloumann, J. P. Bagrow, K. Megerdoomian, M. T. McMahon, B. F. Tivnan, C. M. Danforth
-  We demonstrate that the concerns expressed by Garcia et al. are misplaced, due to (1) a misreading of our findings in [1]; (2) a widespread failure to examine and present words in support of asserted summary quantities based on word usage frequencies; and (3) a range of misconceptions about word usage frequency, word rank, and expert-constructed word lists
-In particular, we show that the English component of our study compares well statistically with two related surveys, that no survey design influence is apparent, and that estimates of measurement error do not explain the positivity biases reported in our work and that of others
-We further demonstrate that for the frequency dependence of positivity---of which we explored the nuances in great detail in [1]---Garcia et al
-did not perform a reanalysis of our data---they instead carried out an analysis of a different, statistically improper data set and introduced a nonlinearity before performing linear regression.
+  We demonstrate that the concerns expressed by Garcia et al. are misplaced, due to
+  (1) a misreading of our findings in [1];
+  (2) a widespread failure to examine and present words in support of asserted summary quantities based on word usage frequencies;
+  and (3) a range of misconceptions about word usage frequency, word rank, and expert-constructed word lists.
+In particular, we show that the English component of our study compares well statistically with two related surveys, that no survey design influence is apparent, and that estimates of measurement error do not explain the positivity biases reported in our work and that of others.
+We further demonstrate that for the frequency dependence of positivity
+---of which we explored the nuances in great detail in [1]
+---Garcia et al did not perform a reanalysis of our data---
+they instead carried out an analysis of a
+statistically improper data set and introduced a nonlinearity before performing linear regression.
 \end{quote}
 
 \subsection{Contribution}
@@ -124,13 +139,17 @@ Paper number six is \textit{The game story space of professional sports: Austral
 
 \subsection{Abstract}
 \begin{quote}
-  Sports are spontaneous generators of stories
-Through skill and chance, the script of each game is dynamically written in real time by players acting out possible trajectories allowed by a sport's rules
-By properly characterizing a given sport's ecology of `game stories', we are able to capture the sport's capacity for unfolding interesting narratives, in part by contrasting them with random walks
-Here, we explore the game story space afforded by a data set of 1,310 Australian Football League (AFL) score lines
-We find that AFL games exhibit a continuous spectrum of stories rather than distinct clusters
-We show how coarse-graining reveals identifiable motifs ranging from last minute comeback wins to one-sided blowouts
-Through an extensive comparison with biased random walks, we show that real AFL games deliver a broader array of motifs than null models, and we provide consequent insights into the narrative appeal of real games.
+  Sports are spontaneous generators of stories.
+Through skill and chance, the script of each game is dynamically written in real time by players acting out possible trajectories allowed by a sport's rules.
+By properly characterizing a given sport's ecology of `game stories',
+we are able to capture the sport's capacity for unfolding interesting narratives,
+in part by contrasting them with random walks.
+Here, we explore the game story space afforded by a data set of 1,310 Australian Football League (AFL) score lines.
+We find that AFL games exhibit a continuous spectrum of stories rather than distinct clusters.
+We show how coarse-graining reveals identifiable motifs ranging from last minute comeback wins to one-sided blowouts.
+Through an extensive comparison with biased random walks,
+we show that real AFL games deliver a broader array of motifs than null models,
+and we provide consequent insights into the narrative appeal of real games.
 \end{quote}
 
 \subsection{Contribution}
@@ -143,11 +162,17 @@ Paper number seven is \textit{The Lexicocalorimeter: Gauging public health throu
 
 \subsection{Abstract}
 \begin{quote}
-  We propose and develop a Lexicocalorimeter: an online, interactive instrument for measuring the "caloric content" of social media and other large-scale texts
-We do so by constructing extensive yet improvable tables of food and activity related phrases, and respectively assigning them with sourced estimates of caloric intake and expenditure
-We show that for Twitter, our naive measures of "caloric input", "caloric output", and the ratio of these measures are all strong correlates with health and well-being measures for the contiguous United States
-Our caloric balance measure in many cases outperforms both its constituent quantities, is tunable to specific health and well-being measures such as diabetes rates, has the capability of providing a real-time signal reflecting a population's health, and has the potential to be used alongside traditional survey data in the development of public policy and collective self-awareness
-Because our Lexicocalorimeter is a linear superposition of principled phrase scores, we also show we can move beyond correlations to explore what people talk about in collective detail, and assist in the understanding and explanation of how population-scale conditions vary, a capacity unavailable to black-box type methods.
+  We propose and develop a Lexicocalorimeter: an online, interactive instrument for measuring the ``caloric content'' of social media and other large-scale texts.
+We do so by constructing extensive yet improvable tables of food and activity related phrases, and respectively assigning them with sourced estimates of caloric intake and expenditure.
+We show that for Twitter, our naive measures of ``caloric input'', ``caloric output'', and the ratio of these measures are all strong correlates with health and well-being measures for the contiguous United States.
+Our caloric balance measure in many cases outperforms both its constituent quantities,
+is tunable to specific health and well-being measures such as diabetes rates,
+has the capability of providing a real-time signal reflecting a population's health,
+and has the potential to be used alongside traditional survey data in the development of public policy and collective self-awareness.
+Because our Lexicocalorimeter is a linear superposition of principled phrase scores,
+we also show we can move beyond correlations to explore what people talk about in collective detail,
+and assist in the understanding and explanation of how population-scale conditions vary,
+a capacity unavailable to black-box type methods.
 \end{quote}
 
 \subsection{Contribution}
@@ -203,11 +228,28 @@ To realize the goals of this research, the website is designed to communicate
 the patterns of Teletherm dynamics at both a local and a regional level.
 In addition to building interactive versions of the US maps, I worked with
 Professor Dodds to design novel visualizations for the individual station teletherm dynamics.
-These plots are shown in Figure \ref{fig:teletherm-radial}, and accompany visualizations of
+These plots are shown in Figure \ref{fig:teletherm-splat}, and accompany visualizations of
 the time dynamics of Teletherm days, extends, and temperatures.
 
-The final tool provided at \href{http://teletherm.org/}{http://teletherm.org/} is a
+%% The final tool provided at \href{http://teletherm.org/}{http://teletherm.org/} is a
 
+\begin{figure}[tbp!]
+  \centering
+  \includegraphics[width=0.96\textwidth]{figures/teletherm-005.png}
+  \caption[]{
+    Teletherm map.
+  }
+  \label{fig:teletherm-map}
+\end{figure}
+
+\begin{figure}[tbp!]
+  \centering
+  \includegraphics[width=0.96\textwidth]{figures/teletherm-002.png}
+  \caption[]{
+    Teletherm dial.
+  }
+  \label{fig:teletherm-splat}
+\end{figure}
 
 % \section{Predicting Flow Reversals in a Computational Fluid Dynamics Simulated Thermosyphon using Data Assimilation}
 %
@@ -229,12 +271,20 @@ Paper number 10 is \textit{Divergent Discourse Between Protests and Counter-Prot
 \subsection{Abstract}
 
 \begin{quote}
-  Since the shooting of Black teenager Michael Brown by White police officer Darren Wilson in Ferguson, Missouri, the protest hashtag \#BlackLivesMatter has amplified critiques of extrajudicial killings of Black Americans
-In response to \#BlackLivesMatter, other Twitter users have adopted \#AllLivesMatter, a counter-protest hashtag whose content argues that equal attention should be given to all lives regardless of race
-Through a multi-level analysis, we study how these protests and counter-protests diverge by quantifying aspects of their discourse
-In particular, we introduce methodology that not only quantifies these divergences, but also reveals whether they are from widespread discussion or a few popular retweets within these groups
-We find that \#BlackLivesMatter exhibits many informationally rich conversations, while those within \#AllLivesMatter are more muted and susceptible to hijacking
-We also show that the discussion within \#BlackLivesMatter is more likely to center around the deaths of Black Americans, while that of \#AllLivesMatter is more likely to sympathize with the lives of police officers and express politically conservative views.
+  Since the shooting of Black teenager Michael Brown by White police officer Darren Wilson in Ferguson, Missouri,
+the protest hashtag \#BlackLivesMatter has amplified critiques of extrajudicial killings of Black Americans.
+In response to \#BlackLivesMatter,
+other Twitter users have adopted \#AllLivesMatter,
+a counter-protest hashtag whose content argues that equal attention should be given to all lives regardless of race.
+Through a multi-level analysis,
+we study how these protests and counter-protests diverge by quantifying aspects of their discourse.
+In particular,
+we introduce methodology that not only quantifies these divergences,
+but also reveals whether they are from widespread discussion or a few popular retweets within these groups.
+We find that \#BlackLivesMatter exhibits many informationally rich conversations,
+while those within \#AllLivesMatter are more muted and susceptible to hijacking.
+We also show that the discussion within \#BlackLivesMatter is more likely to center around the deaths of Black Americans,
+while that of \#AllLivesMatter is more likely to sympathize with the lives of police officers and express politically conservative views.
 \end{quote}
 
 \subsection{Contribution}
