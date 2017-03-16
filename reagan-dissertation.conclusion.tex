@@ -27,3 +27,15 @@ Most recently this has been put forth to frame the decisions of economists in ti
 %% Small piece: Can we determine if a character is bad?
 %% Can we determine when a character dies?
 %% Can we figure out the relationship between two characters?  Fighting?  A team? Romance?  And find when the relationship changes in nature?
+
+
+Great defense on Friday! I was thinking about how else you could push on the shapes of story idea and am wondering whether you tried to predict the Library of Congress classification using the positivity time series. Maybe something like community detection after doing some kind of projection to deal with length differences? In my head, you would include both fiction and non-fiction and demonstrate that the six basic shapes uniquely identity fiction from most non-fiction.
+
+Yeah I think we could feed the coefficient vector from the SVD for the first 10 or so modes (projection into that space) into a predictor and see how much predictive power we can get from each mode.
+Clustering on those vectors would actually be straightfoward, do something like kMeans with k=2 and see if the two clusters are fiction/non-fiction?
+
+There are many improvements possible for the visualizations hosted online at \href{http://teletherm.org/}{http://teletherm.org/}.
+The teletherm animations can be improved through the use of the \verb|d3.timer| module for smoother animation.
+Voronoi cells on the map are clipped at the boundary of the contiguous United States using a clipping mask that contains all 50 states as individual paths, and this does not work reliably in Google Chrome.
+More issues for improvement are noted in the ``issues'' tab of the online source code repository at \href{https://github.com/andyreagan/teletherm.org}{https://github.com/andyreagan/teletherm.org}.
+In addition, it will be possible to extend the teletherm project to incorporate temperature data from across the world.
