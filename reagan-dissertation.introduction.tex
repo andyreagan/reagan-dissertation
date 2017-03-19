@@ -51,6 +51,7 @@ As we will see, machine learning (often broadly referred to as AI) is finding us
 While sentiment analysis benefits from machine learning to create classifiers and sentiment dictionaries, the output of sentiment detection also aids higher level approaches to language understanding.
 
 \subsection{Psychology of emotion}
+\label{subsec:psychology}
 
 With few exceptions, current sentiment analysis methods aim to detect sentiment one-dimensionally, giving a score on a range from negative to positive sentiment.
 While this pragmatic approach proves useful, \cite{jack2014dynamic} conjectured that there are four basic emotions, \cite{ekman1992argument} names six, and \cite{plutchik1991emotions} identifies two additional basic emotions in humans.
@@ -222,6 +223,7 @@ In addition to the tagged datasets above, we attempt to provide a comprehensive 
 %% Deep learning: \cite{tang2014coooolll} induced Twitter sentiment lexicons using sentiment-specific word embeddings, obtained via distant supervision.
 
 \subsection{Natural Language Processing techniques}
+\label{subsec:nlp}
 
 As itself a tool for NLP,
 sentiment analysis leverages approaches that are applied more broadly (e.g., classification),
@@ -272,6 +274,7 @@ This achieves a very basic
 and computationally efficient disambiguation between word senses.
 
 \subsubsection{Multi-word Expressions}
+\label{subsec:mwe}
 
 In addition to tokenization,
 the meaningful units of language often span multiple words.
@@ -314,6 +317,7 @@ We conclude that both of these available methods, and even the ``naive'' method 
 Sentiment dictionaries only contain ratings for single words, and extending existing dictionary ratings to MWEs is a widely acknowledged area for future research.
 
 \subsubsection{Word Sense Disambiguation (WSD)}
+\label{subsec:wsd}
 
 To get a sense of the Word Sense Disambiguation (WSD) problem,
 here we examine a scholarly competition:
@@ -456,6 +460,7 @@ Chronologically, the first approach here is by \cite{hatzivassiloglou1997predict
 We will proceed by summarizing the main result of each paper, casting the methodology into one of the aforementioned categories.
 
 \subsubsection{Previous approaches}
+\label{subsec:prev-propagation}
 
 First, we take a close look at the earliest effort to build a corpus-specific sentiment dictionary to get a deeper sense of the steps involved in this task.\\
 
@@ -663,6 +668,7 @@ For lexicon creation, their approach labeled ``Densifier'' achieves the statisti
 Altogether, these approaches provide a roadmap and demonstrate the possibility of constructing a high-quality, general purpose, phrase based sentiment dictionary.
 
 \subsection{Visualization}
+\label{subsec:vis}
 
 Lacking from the bulk of research that applies sentiment analysis, but crucial for validation and understanding, is visualization of sentiment analysis.
 %% (herein, \textit{vis}) 
@@ -928,6 +934,7 @@ It is precisely this shortcoming which we hope to address, by using a broad coll
 %% %% Case studies to detect causality \cite{levy2008case}
 
 \subsection{Story graphs, plot diagrams, and inferring causality}
+\label{subsec:SIG-diagrams}
 
 With the distinction between plot, structure, and emotional trajectory in mind, there have also been attempts to discover plot using data driven methods.
 \cite{brewer1980event} makes the distinction between plot and structure is made even clearer.
@@ -974,6 +981,7 @@ To quote their results:
 With no first place award, the second place award and \$1000 prize was awarded to Judy Malloy whose algorithm rearranged sentences from ``Another Party in Woodside''.
 
 \subsection{Character Identification and Networks}
+\label{subsec:characters}
 
 Much work on computational understanding of stories has focused on the extraction and analysis of character networks.
 The ideas behind character networks were first examined in the original work of Moretti \citep{moretti2000conjectures,moretti2007a,schulz2011what,moretti2013distant}, and have been used widely in Digital Humanities research.
@@ -1004,6 +1012,7 @@ A particular problem in using character networks that span an entire movie, TV s
 \cite{bost2016narrative} examine conversation in TV shows using a smoothing of narration to overcome the multiple narrative problem, finding protagonists more readily than using simpler interaction networks.
 
 \subsection{Frames for NLP}
+\label{subsec:frames-NLP}
 
 The seminal work by \cite{schank1977scripts} (and earlier efforts by \cite{rumelhart1975notes}) laid the groundwork for scripts as a framework for cognitive algorithmic computation.
 Research programs separately advancing AI capabilities and NLP tasks have made use of this framework.
@@ -1019,7 +1028,7 @@ Both \cite{cheung2013probabilistic} (using the proposed approach of \cite{oconno
 Recent work from \cite{pichotta2015learning} improves on the baseline results of Chambers in detecting scripts using Recurrent Neural Networks (RNNs, particularly a flavor known as Long Short Term Memory (LSTM)) and architectures adapted to this task.
 
 Corpora used by Chambers and by others include the FrameNet from \cite{baker1998berkeley}, Timebank Corpus from \cite{pustejovsky2003timebank}, Opinion Corpus from \cite{mani2006machine}, Narrative Schema Database from \cite{chambers2010database}, the Media Frames Corpus by \cite{card2015media}, and most recently the Story Cloze Dataset from \cite{mostafazadeh2016corpus}.
-As an example, \cite{do2011minimally} use a primarily unsupervised approach to specifically learn causality between events in the Penn Discourse Treebank.
+As an example, \cite{do2011minimally} use a primarily unsupervised approach to specifically learn causality between events in the Penn Discourse Treebank, and \cite{roemmele2017an-rnn-based} use an RNN on the Story Cloze dataset.
 The understanding and generation of stories with these data sets and new models may hold promise for major advances in the field of NLP.
 \cite{cambria2014jumping} has suggested that the next wave of NLP advances that aim to decode stories (a move from ``bag of words'' approaches to ``bag of narratives'') may very well be a breakthrough in understanding human nature.
 
