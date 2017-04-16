@@ -62,29 +62,11 @@
 %% via Peter Dodds
 \usepackage{currfile}
 \input{\currfilebase.settings}
+\input{\filenamebase.settings}
 \input{\filenamebase.title}
 \input{\filenamebase.committee}
 
-\setcounter{tocdepth}{2}
-
 \begin{document}
-
-%% \renewcommand{\thesection}{\thepart.\textbf{section}}
-%% \titlecontents{section}[0]{\vspace{4px}}{\bf}{}{}
-%% \titlecontents{section}[0]{\vspace{5.5px}\bf}{}{}{}
-\titlecontents{section}
-              [3.8em]
-              {}
-              {\contentslabel{2.3em}}
-              {\hspace*{-2.3em}}
-              {\titlerule*[1pc]{.}\contentspage}
-
-\titlecontents{subsection}
-              [6.0em]
-              {}
-              {\contentslabel{2.9em}}
-              {\hspace*{-2.3em}}
-              {\titlerule*[1pc]{.}\contentspage}
 
 \maketitle
 %% \makeacceptance

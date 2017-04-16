@@ -8,20 +8,62 @@
 
 \input{/Users/andyreagan/projects/2015/03-sentiment-comparison/paper/dissertation/sentiment-comparison-paper-dissertation-supplementary}
 
+\clearpage
+\pagebreak
+
 \chapter{Supplementary Material for Emotional Arcs}
 
 \input{/Users/andyreagan/projects/2014/09-books/media/paper/dissertation/emotional-arcs-dissertation-supplementary}
 
-%% \chapter{labMTsimple: A Python Library for Sentiment Analysis}
+\clearpage
+\pagebreak
+
+\chapter{labMTsimple: A Python Library for Sentiment Analysis}
 
 %% %% see the adjacent README for how this is generated
-%% \input{/Users/andyreagan/tools/python/labMTsimple/docs/labMTsimple-basic}
+\input{/Users/andyreagan/tools/python/labMTsimple/docs/labMTsimple-basic}
 
-%% \chapter{Code for VACC Twitter Database Keyword Searches}
+\clearpage
+\pagebreak
 
-%% In this Appendix we describe a strategy for utilizing the computational resources
-%% available at the University of Vermont's supercomputing center for searching
-%% through Twitter data.
+\chapter{Code for VACC Twitter Database Keyword Searches}
+
+In this Appendix we describe a strategy for utilizing the computational resources available at the University of Vermont's supercomputing center for searching through Twitter data.
+A schematic of the general approach is provided below in Figure~\ref{fig:keyword-search}.
+We provide scripts for a minimum working example of this approach online at \href{https://github.com/andyreagan/VACC-keyword-search}{https://github.com/andyreagan/VACC-keyword-search}.
+
+The basic approach is to use the cron scheduler to make sure that around 100--150 jobs are running all the time.
+Each job is short, processing at most an hour of Tweets, so that each job takes less time to run and can utilize the shortq, which has a limit of 200 jobs that run immediately under most circumstances.
+
+Cron calls the shell script \verb|cron.sh| directly, and that shell script invokes the Python script \verb|qsub.py| to handle the more complex logic of dates and job submission (which is just easier in Python).
+The work of looking through Tweets happens in \verb|processTweets.py|.
+By utilizing pipes and unzipping from disk directly into Python, no unzipped files are written to disk (this would be prohibitively slow and use too much storage).
+Instead, just the minimum necessary output from the search is written to disk, by Python.
+
+To make this run for new keywords, do the following:
+\begin{enumerate}
+\item Edit the keywords in \verb|processTweets.py|.
+\item Set the start date in \verb|currdate.txt|.
+\item Create folders for the keywords (manually, or using \verb|makeFolders| function from the \verb|processTweets.py| script). Including the base \verb|raw-tweets| folder.
+\item Instantiate a virtual environment. It is called set it up in the job script submitted by \verb|qsub.py|, and in the \verb|cron.sh| to call \verb|qsub.py|. (Or don't use one, at your own peril!).
+\item Edit the folders in \verb|cron.sh| and \verb|qsub.py| to where this is running.
+\item Add the script \verb|cron.sh| to your crontab.
+\item Profit.
+\end{enumerate}
+
+Using the commands \verb|mmlsquota| and \verb|showq|, you can see your file system usage and track the individual jobs (look at \verb|currdate.txt| for submitted progress).
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=0.95\textwidth]{figures/keyword-search-crop.pdf}
+  \caption[]{
+    Schematic of the keyword search framework on the Vermont Advanced Compute Cluster.
+    The three core Python files are invoked by the cron scheduler, and the computation is handed off to compute nodes through the PBS schedulers qsub command.
+    An example code base is provided at \href{https://github.com/andyreagan/VACC-keyword-search}{https://github.com/andyreagan/VACC-keyword-search}.
+  }
+  \label{fig:keyword-search}
+\end{figure}
+
 
 %% Cron
 %% Python
@@ -45,9 +87,40 @@
 %% Machine learning techniques posses the advantage of to classify quickly after the training process.
 %% While it may take days, weeks, or even months to train a deep neural network, look-ups require very little added computational burden.
 
-%% \chapter{Infrastructure of Hedonometer.org}
+\chapter{Infrastructure of Hedonometer.org}
 
+The Hedonometer website at \href{http://hedonometer.org}{http://hedonometer.org} is comprised of three main parts: (1) the web server processing including the base code in Python Django, (2) the data processing on the server, and (3) data processing on the VACC.
+The deployment of the webserver is done using templates and the Ansible tool.
+Settings and detailed instructions for deploying development and production servers are at \href{https://github.com/andyreagan/hedonometer-vagrant-ansible-deployment}{https://github.com/andyreagan/hedonometer-vagrant-ansible-deployment}.
+In Figure~\ref{fig:hedonometer-org} we diagram the web server side of the server, included the deployment settings mentioned above and the Django server linked in the caption.
 
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=0.95\textwidth]{figures/hedonometer-org.pdf}
+  \caption[]{
+    Schematic of the Hedonometer server architecture.
+    The section in orange is contained in the prod user account, and includes the code stored on GitHub at \href{https://github.com/andyreagan/hedonometer}{https://github.com/andyreagan/hedonometer}.
+    The settings files for UWSGI and Nginx are written by an Ansible playbook based on the user account under which the code is distributed.
+  }
+  \label{fig:hedonometer-org}
+\end{figure}
+
+The data side of the server is run separately from the web server side.
+Nginx serves all files in the \verb|/data| URL ending at Hedonometer, and the files can be browsed at \href{http://hedonometer.org/data/}{http://hedonometer.org/data/}.
+The files here are used in the front end visualizations across the site, and represent files that loaded for the details-on-demand, as well as the overview files.
+The structure is optimized for front end performance.
+The code base is on GitHub at \href{https://github.com/andyreagan/hedonometer-data-munging}{https://github.com/andyreagan/hedonometer-data-munging}.
+As seen in the overall schematic of the server, these files are all inside of \verb|/usr/share/nginx| and they are managed by the \verb|root| user.
+
+Every hour on the hour, these files are updated by a cascade of processes through the cron scheduler.
+The process is simple enough to do without a diagram: \verb|cron| calls \verb|cronregions.sh| every hour, which simply calls \verb|regions.py| with Python.
+The \verb|regions.py| loops over dates, looks for files in the \verb|word-vectors| folders for each region, and uses \verb|rsync| to copy over the missing files.
+Once whole days are downloaded in the 15-minute pieces, it creates the daily summary files (e.g., \verb|word-vectors/vacc/2017-04-07-sum.csv|) and updates the overall summary at \href{http://hedonometer.org/data/word-vectors/vacc/sumhapps.csv}{http://hedonometer.org/data/word-vectors/vacc/sumhapps.csv} (being wary of duplicates, and keeping the most recent).
+
+The copy of files from the VACC uses \verb|rsync|, which operates of \verb|ssh| and relies on the public key of the server being present on the VACC for seamless access.
+The files on the VACC are created by a separate process, which is managed in much the same way as the keyword searches in the previous appendix.
+The cron scheduler runs every hour on the hour, and submits jobs to the PBS queue that turn 15-minute zipped JSON Tweet files into length 10,222 word vectors.
+The full code for this process is available at \href{https://github.com/andyreagan/hedonometer-VACC-processing}{https://github.com/andyreagan/hedonometer-VACC-processing}.
 
 %% In this Appendix we document the processes that comprise the real-time
 %% visualization of Twitter happiness at Hedonometer.org.
@@ -66,3 +139,30 @@
 %% D3
 
 %% Rsync
+
+\chapter{Online Code Repositories}
+
+In this Appendix we collect the repositories that store the code used across all of the projects in this dissertation.
+
+From Chapters 2 and 3, we make the code for the papers publicly available in following two repositories :
+(1)
+\href{https://github.com/andyreagan/sentiment-analysis-comparison}{https://github.com/andyreagan/sentiment-analysis-comparison}
+and (2)
+\href{https://github.com/andyreagan/core-stories}{https://github.com/andyreagan/core-stories}.
+The code for the online Appendix for the sentiment comparison paper is available at \href{https://github.com/andyreagan/sentiment-analysis-comparison-online-appendix}{https://github.com/andyreagan/sentiment-analysis-comparison-online-appendix}, and for the emotional arcs paper at \href{https://github.com/andyreagan/core-stories-online-appendices}{https://github.com/andyreagan/core-stories-online-appendices}.
+In addition, the code for the Hedonometer website that hosts the interactive emotional arc visualizations is at \href{https://github.com/andyreagan/hedonometer}{https://github.com/andyreagan/hedonometer}.
+
+From Chapter 4, we provide a link to the repository for each project, in the respective order.
+
+\begin{itemize}
+\item Collective Philanthropy: Describing and Modeling the Ecology of Giving --- code at \href{https://github.com/andyreagan/philanthropy-distributions-code}{https://github.com/andyreagan/philanthropy-distributions-code} and online appendices at \href{https://github.com/andyreagan/philanthropy-distributions-online-appendices}{https://github.com/andyreagan/philanthropy-distributions-online-appendices}.
+\item Shadow networks: Discovering hidden nodes with models of information flow --- \href{https://github.com/andyreagan/twitter-reply-networks}{https://github.com/andyreagan/twitter-reply-networks}.
+\item Human language reveals a universal positivity bias --- \href{https://github.com/andyreagan/many-happy-languages-appendix}{https://github.com/andyreagan/many-happy-languages-appendix}.
+\item Climate change sentiment on Twitter: An unsolicited public opinion poll --- code for generating figures is at \href{https://github.com/andyreagan/climate-change-twitter}{https://github.com/andyreagan/climate-change-twitter} and for performing the keyword search is at \href{https://github.com/andyreagan/climate-change-twitter-keyword-search}{https://github.com/andyreagan/climate-change-twitter-keyword-search}.
+\item Reply to Garcia et al.: Common mistakes in measuring frequency dependent word characteristics --- the code for this project is contained in the repository for a previous project, at \href{https://github.com/andyreagan/sentiment-analysis-comparison}{https://github.com/andyreagan/sentiment-analysis-comparison}.
+\item The game story space of professional sports: Australian Rules Football --- \href{https://github.com/andyreagan/game-stories-code}{https://github.com/andyreagan/game-stories-code}.
+\item The Lexicocalorimeter: Gauging public health through caloric input and output on social media --- the code for the online Appendix for this paper is at \href{https://github.com/andyreagan/lexicocalorimeter-appendix}{https://github.com/andyreagan/lexicocalorimeter-appendix}, code for creating wordshift graphs from the website is at \href{https://github.com/andyreagan/lexicocalorimeter-shifts}{https://github.com/andyreagan/lexicocalorimeter-shifts}, and Panometer website is at \href{https://github.com/andyreagan/panometer.org}{https://github.com/andyreagan/panometer.org}.
+\item Tracking the Teletherms: The spatiotemporal dynamics of the hottest and coldest days of the year --- the website code is at \href{https://github.com/andyreagan/teletherm.org}{https://github.com/andyreagan/teletherm.org} and the online appendix code is at \href{https://github.com/andyreagan/teletherms-online-appendices}{https://github.com/andyreagan/teletherms-online-appendices}.
+\item Divergent Discourse Between Protests and Counter-Protests: \#BlackLivesMatter and \#AllLivesMatter --- \href{https://github.com/andyreagan/livesmatter-keyword-search}{https://github.com/andyreagan/livesmatter-keyword-search}.
+\end{itemize}
+

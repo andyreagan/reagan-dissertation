@@ -42,8 +42,8 @@
   colorlinks=true,
     citecolor=softblue, %% citations
     linkbordercolor=black,
-    linkcolor=softred, %% internal
-    urlcolor=softgreen,
+    linkcolor=softblue, %% internal
+    urlcolor=softblue,
 }
 
 % ============================================
@@ -115,13 +115,15 @@
     %%
     %% \vskip 2em
     \begin{center}
+      \singlespacing
         {\LARGE \textsc{ \@title } \par}
         \vskip 5em
         \doublespacing
         {
             \@thesistype\ Presented\\
-	    %% \vskip 2em
+	    \vskip 2em
             by\\
+            %% \vskip 2em
             \@author\\
             to\\
             The Faculty of the Graduate College\\
@@ -146,8 +148,8 @@
 	\vskip 1em
 	\@advisor, Advisor\\
 	\@readerone, Advisor\\
+        \@chair, Chairperson\\
 	\@readertwo\\
-	\@chair, Chairperson\\
 	\@dean, Dean of Graduate College\\
 	\end{flushright}
 
@@ -170,7 +172,7 @@
 \newcommand\mainmatter{
   \pagestyle{fancy}
   \fancyhf{}
-  \lhead{\leftmark}
+  %% \lhead{\leftmark}
   \cfoot{\thepage}
   \pagenumbering{arabic}
   \doublespacing
