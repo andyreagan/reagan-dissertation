@@ -4,7 +4,7 @@ mkdir -p package
 echo "making a single latex file..."
 ./make-single-latex-file.pl $1-main.tex
 echo "finding figures and linking..."
-./makelinks.pl $1-main-combined.tex
+./make-links.pl $1-main-combined.tex
 
 ## this makes pdf's and such: moved to makelinks.pl
 ## cd package
