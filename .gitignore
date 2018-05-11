@@ -8,3 +8,7 @@ reagan*.pdf
 *.bak
 .DS_Store
 *~
+*-combined.tex
+*.tgz
+arxiv-package/
+reagan-dissertation.key
