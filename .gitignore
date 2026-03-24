@@ -1,14 +1,25 @@
-reagan*.pdf
-*.bbl
-*.blg
+# macOS
+.DS_Store
+
+# LaTeX build artifacts
+*.aux
 *.log
 *.out
-*.aux
 *.toc
-*.bak
-.DS_Store
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+
+# Editor backups
 *~
-*-combined.tex
-*.tgz
-arxiv-package/
-reagan-dissertation.key
+\#*\#
+
+# Jupyter
+.ipynb_checkpoints/
+
+# PDF build outputs (keep the final dissertation PDF)
+# reagan-dissertation-main.pdf
