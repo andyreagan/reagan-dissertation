@@ -24,8 +24,8 @@ Semi-supervised learning of lexicon \cite{rao2009semi}
 
 \cite{velikovich2010viability}
 The viability of web-derived polarity lexicons
-Used n-grams from 4 billion web pages, and pruned a network with various heuristics contructed from context vectors (window size 6).
-Seeds words for positive and negative sentiment, and scores determined by shortest paths to the seed set, a ``graph propogation algorithm''.
+Used n-grams from 4 billion web pages, and pruned a network with various heuristics constructed from context vectors (window size 6).
+Seeds words for positive and negative sentiment, and scores determined by shortest paths to the seed set, a ``graph propagation algorithm''.
 Compares favorably to manually constructed lexicon from \cite{wilson2005recognizing} and lexicon from WordNet in \cite{blair2008building}.
 
 \cite{bestgen2012checking}
@@ -48,7 +48,7 @@ The resulting lexicon out-performed the methods compared against in Tweet classi
 
 \cite{hamilton2016inducing}
 Inducing Domain-Specific Sentiment Lexicons from Unlabeled Corpora
-Utilizes the approach set out in \cite{velikovich2010viability} to generate corpus specific word embeddings using SVD and propograte sentiment labels on inferred $k$-NN network.
+Utilizes the approach set out in \cite{velikovich2010viability} to generate corpus specific word embeddings using SVD and propagate sentiment labels on inferred $k$-NN network.
 Measures uncertainty in predicted labels with bootstrapping procedure that holds out fractions of seed set (on the order of 10 words, holding out 2).
 Claims to measure performance with correlations to existing dataset of \cite{warriner2013norms}, but not found in results.
 
@@ -81,7 +81,7 @@ SVD$_\textrm{PPMI}$, as proposed by \cite{levy2014neural}, was highlighted to av
 Estimating affective word covariates using word association data
 Does just that for 14K dutch words, finding the best correlation between this method and human evaluation for $k$-NN algorithm (also tried ``Orientation towards Paradigm Words'').
 For $k=10$ obtained correlations for valence, arousal, and dominance of .91, .84, and .85.
-This performance is considerably better than was acheived by \cite{mandera2015useful} for English using corpus derived word similarity.
+This performance is considerably better than was achieved by \cite{mandera2015useful} for English using corpus derived word similarity.
 
 \cite{rothe2016ultradense}
 Transform the embedding space via optimization of certain dimensions onto known semantic properties.

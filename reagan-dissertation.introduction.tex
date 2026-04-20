@@ -12,7 +12,7 @@ Individual words encapsulate information and emotion as the building blocks that
 Beyond words, multi-word expressions (phrases), conceptual metaphor, and complicated grammar (syntax) coalesce to provide incredible expressive power.
 %% through both metaphor and ....
 %% (but not without bias).
-Attempts to quantify semantic content build atop syntactic understand of language with the aim of transforming a model of meaning that has proven useful to our own cognitive machinery into something more readily applicable for another purpose (e.g., summarization by a computer).
+Attempts to quantify semantic content build atop syntactic understanding of language with the aim of transforming a model of meaning that has proven useful to our own cognitive machinery into something more readily applicable for another purpose (e.g., summarization by a computer).
 One such goal of semantic understanding is to measure the sentiment expressed in written communication, which is broadly known as sentiment analysis.
 The next evolution of natural language systems will tackle the harder-yet problems of pragmatics, where narrative understanding and generation can enable common-sense reasoning on par with human intuition.
 
@@ -61,7 +61,7 @@ Altogether they have found consistent neural locations for basic emotions but no
 %% \cite{critchley2009psychophysiology}
 %% \cite{fusar2009functional}
 
-The widely acknowledged six basic emotions identified by Paul Eckman are:
+The widely acknowledged six basic emotions identified by Paul Ekman are:
 {
 \begin{itemize}
 \item \textit{happy},\vspace{-12pt}
@@ -76,7 +76,7 @@ In Figure~\ref{fig:ekman}, a visualization of these six basic emotions is shown.
 As noted in the caption, these six emotions serve as a basis for more complex emotions.
 The eight basic emotions of \cite{plutchik1991emotions} are shown as the variations along four dimensions in Figure~\ref{fig:plutchik}.
 While we do not expect that each of the six basic emotions have orthogonal representations in their embodiment in language (as orthogonality may be inferred from the Figures, is found in facial expression, and underlies the theory), a basis of more than a single dimension is likely necessary to represent the full range of emotion.
-The basic emotions theory rejects that all emotions can be represented as either positive of negative states, and this should extend to language.
+The basic emotions theory rejects that all emotions can be represented as either positive or negative states, and this should extend to language.
 Indeed, attempts to cast the basic emotions as either positive (e.g., happy) or negative (e.g., sad) are subjective, e.g. by \cite{robinson2008brain} classifying \textit{pride} as a negative emotion.
 According to \cite{ekman1992argument}, basic emotions are distinguished by nine characteristics:
 \begin{enumerate}
@@ -94,7 +94,7 @@ According to \cite{ekman1992argument}, basic emotions are distinguished by nine 
 To this end, in Figure~\ref{fig:russell} the theory of \cite{russell1980circumplex} attempts to find the core dimensions of emotion using data from emotions manually labelled for 28 adjectives.
 The explained variance by the first two principal components would provide an indication of how well we can capture emotion with two abstract dimensions, however this is not provided by \cite{russell1980circumplex}.
 Each of these theories expands upon the single dimension considered further in sentiment analysis: positive and negative.
-More complex emotions can be constructed from combinations of the basic emotions (e..g., \verb|delight = joy + surprise|), which is not possible from combinations of simply positive and negative states (e.g., it would be nonsensical to find coefficients $a,b$ for the abstract categories positive and negative to satisfy \verb|delight = a*positive + b*negative|).
+More complex emotions can be constructed from combinations of the basic emotions (e.g., \verb|delight = joy + surprise|), which is not possible from combinations of simply positive and negative states (e.g., it would be nonsensical to find coefficients $a,b$ for the abstract categories positive and negative to satisfy \verb|delight = a*positive + b*negative|).
 
 \begin{figure}[tbp!]
   \centering
@@ -123,7 +123,7 @@ More complex emotions can be constructed from combinations of the basic emotions
   \centering
   \includegraphics[width=0.48\textwidth]{figures/russell-01.png}
   \caption[]{
-    Eight emotions on the arousal--pleasure axis of \cite{russell1980circumplex}, who finds these axis to be the best representation of emotion.
+    Eight emotions on the arousal--pleasure axis of \cite{russell1980circumplex}, who finds these axes to be the best representation of emotion.
     To this end, using 28 emotional words manually annotated for the characteristics which they share, Russell finds the two major principal components in a Principal Component Analysis, establishing this ``circular ordering.''
     This circular ordering agrees well with the mental model of emotional states used by psychologists at the time.
   }
@@ -176,7 +176,7 @@ We will examine in Chapter~\ref{chap:benchmarking} how dictionary based approach
 Several examples of different sentences are also given in \cite{liu2012sentiment}, highlighting the difficulty of classifying individual sentences, and we share these examples here.
 
 The accuracy of classifying documents correctly as positive or negative is commonly measured using precision, recall, and F-score statistics, as in \cite{ribeiro2016sentibench}.
-These measures assess the classification accuracy, but do not attempt to assess the qualitative goal of achieving better understand of text with sentiment analysis (an area on which our work will build).
+These measures assess the classification accuracy, but do not attempt to assess the qualitative goal of achieving better understanding of text with sentiment analysis (an area on which our work will build).
 Both of these goals can be assessed with ground truth data, and next we review publicly available data sets for sentiment evaluation.
 
 \subsection{Publicly available annotated data}
@@ -199,8 +199,8 @@ Given the time and cost associated with obtaining high quality training data, an
   }
   \end{center}
   \caption{Summary of publicly available Twitter datasets tagged with sentiment labels.
-    In respect of Twitter's Terms of Service, lists of the Tweet IDs are provided, as well as a script to download the Tweets through Twitter's public API (note some data may not longer be available).
-  We shorted the references as follows as G: \cite{giachanou2016like}, S: \cite{saif2013evaluation}, R: \cite{ribeiro2016sentibench}, and L: \cite{luo2012opinion}.}
+    In respect of Twitter's Terms of Service, lists of the Tweet IDs are provided, as well as a script to download the Tweets through Twitter's public API (note some data may no longer be available).
+  We shorten the references as follows: G: \cite{giachanou2016like}, S: \cite{saif2013evaluation}, R: \cite{ribeiro2016sentibench}, and L: \cite{luo2012opinion}.}
   \label{tbl:twitter-data}
 \end{table}
 
@@ -292,7 +292,7 @@ Here we summarize two state-of-the-art approaches from \cite{handler2016bag} and
 \noindent Williams performs boundary-based MWE segmentation with text partitioning,
 building on prior work that introduces random and serial partitioning algorithms,
 and showing that phrase frequency follows Zipf's law more closely than words alone. 
-Trained models for partitioning rely on (1) phrase likelihood from ``informed random partitioning'', (2) entries the Wiktionary, and (3) annotated corpora.
+Trained models for partitioning rely on (1) phrase likelihood from ``informed random partitioning'', (2) entries from the Wiktionary, and (3) annotated corpora.
 The model is general purpose for pattern recognition,
 and can be run using text data or PoS tags,
 combining the output phrases for higher recall.
@@ -349,7 +349,7 @@ The parameters of this classifier are optimized using a genetic algorithm, and t
 
 Part-of-Speech (PoS) tagging aims to disambiguate between the various forms that a word can take: verb, pronoun, preposition, adverb, conjunction, participle, and article are eighth of the most well recognized categories.
 This information tells us how a word relates to the neighboring words around it, and finer grained taxonomies of parts of speech in English contain more than 80 types.
-To train and test algorithms for this task, large annotated corpora such as the Penn Treebank are available form \cite{marcus1993building} and OntoNotes .\\
+To train and test algorithms for this task, large annotated corpora such as the Penn Treebank are available form \cite{marcus1993building} and OntoNotes.\\
 
 %% \noindent \textbf{Marcus, M. P., M. A. Marcinkiewicz, and B. Santorini (1993). Building a large annotated corpus of english: The penn treebank. \textit{Computational linguistics} 19(2), 313–330.}
 %% \noindent In \cite{marcus1993building}
@@ -362,7 +362,7 @@ To train and test algorithms for this task, large annotated corpora such as the 
 
 \noindent \cite{toutanova2003feature} develop a PoS tagger with improved accuracy which is competitive in terms of both speed and accuracy with any attempt since.
 This is achieved by using a cyclic dependency network to represent the state of the tagger, and achieves 97.24\% accuracy on the Penn Treebank corpus.
-The tagger is used by \cite{manning2014stanford} in the most recent release the Stanford CoreNLP natural language processing toolkit.\\
+The tagger is used by \cite{manning2014stanford} in the most recent release of the Stanford CoreNLP natural language processing toolkit.\\
 
 %% \noindent \textbf{Gimpel, K., N. Schneider, B. O’Connor, D. Das, D. Mills, J. Eisenstein, M. Heilman, D. Yogatama, J. Flanigan, and N. A. Smith (2011). Part-of-speech tagging for twitter: Annotation, features, and experiments. In \textit{Proceedings of the 49th An- nual Meeting of the Association for Computational Linguistics: Human Language Technologies: short papers-Volume 2}, pp. 42–47. Association for Computational Linguistics.}
 %% \noindent In \cite{gimpel2011part}, the ARK POS tagger for Twitter is described.
@@ -581,7 +581,7 @@ We start again in more depth with recent work of Velikovich, directly applicable
 We review this paper because the methodology outlined is very similar in spirit to all of the approaches that follow.
 For a domain corpus, they use n-grams up to length 10 scraped from 4 billion web pages, however the details of this corpus are left vague.
 They then use the cosine distance between context vectors from these n-grams to build a $k$ nearest neighbor ($k$-NN) network with $k=15$ (the method used to generate context vectors is again left to the reader).
-Seed words within the network are labeled with positive and negative sentiment, and scores for all n-grams are determined by shortest paths to the seed set, a using a generic graph propagation algorithm.
+Seed words within the network are labeled with positive and negative sentiment, and scores for all n-grams are determined by shortest paths to the seed set, using a generic graph propagation algorithm.
 For results, \cite{velikovich2010viability} report that their effort compares favorably to the manually constructed lexicon from \cite{wilson2005recognizing} and a lexicon from WordNet used in \cite{blair2008building}.\\
 
 \noindent \textbf{Bestgen, Y. and N.~Vincze (2012).
@@ -592,8 +592,8 @@ For results, \cite{velikovich2010viability} report that their effort compares fa
 \noindent \cite{bestgen2012checking} begin by taking 300-dimensional word embeddings from the Singular Value Decomposition (SVD) of the word co-occurrence matrix of the TASA corpus, comprised of 44K documents.
 They use these embeddings to build a $k$-NN network, and then use the DIC-LSA technique of \cite{bestgen2008building} with the ANEW dictionary (using the dictionary scores to measure correlations with words in the network).
 This approach extends the ANEW dictionary by adding scores to additional words, directly using the scores in the ANEW dictionary itself.
-For different values of $k$, the score for each word in the network is taken to be the average of it's neighbors (the $k$ closest words in the embedding space), and for words with scores from ANEW, the node value itself is held-out.
-By using only the most extreme words (those in ANEW with scores closer to 1 and closer to 9), they achieve an correlation coefficient (Cohen's Kappa) of .53--.94 on sets of all--190 of the words from ANEW (the latter .94 correlation achieved with using the 190 most extreme words in ANEW).
+For different values of $k$, the score for each word in the network is taken to be the average of its neighbors (the $k$ closest words in the embedding space), and for words with scores from ANEW, the node value itself is held-out.
+By using only the most extreme words (those in ANEW with scores closer to 1 and closer to 9), they achieve a correlation coefficient (Cohen's Kappa) of .53--.94 on sets of all--190 of the words from ANEW (the latter .94 correlation achieved with using the 190 most extreme words in ANEW).
 In addition, they provide ratings using their method for 17,000 English words.\\
 
 %% summarization. looks cool, unrelated.
@@ -632,9 +632,9 @@ The resulting lexicon out-performed other methods in Tweet classification, altho
 \newblock Inducing domain-specific sentiment lexicons from unlabeled corpora.
 \newblock {\em arXiv preprint arXiv:1606.02820\/}.}
 
-\noindent \cite{hamilton2016inducing} utilize the approach set out in \cite{velikovich2010viability} to generate corpus specific word embeddings using SVD and propagating sentiment labels on inferred $k$-NN network.
-The most novel part of the approach measures the uncertainty in predicted labels with bootstrapping procedure that holds out fractions of seed set (with a seed set of 10 words, holding out 2).
-They claim to measure performance with correlations to existing dataset of \cite{warriner2013norms}, but not found in results.\\
+\noindent \cite{hamilton2016inducing} utilize the approach set out in \cite{velikovich2010viability} to generate corpus specific word embeddings using SVD and propagating sentiment labels on an inferred $k$-NN network.
+The most novel part of the approach measures the uncertainty in predicted labels with a bootstrapping procedure that holds out fractions of the seed set (with a seed set of 10 words, holding out 2).
+They claim to measure performance with correlations to the existing dataset of \cite{warriner2013norms}, but not found in results.\\
 
 \noindent \textbf{Mandera, P., E.~Keuleers, and M.~Brysbaert (2015).
 \newblock How useful are corpus-based methods for extrapolating psycholinguistic variables?
@@ -661,10 +661,10 @@ These results highlight the sensitive differences between word analogy tasks for
 \newblock Ultradense word embeddings by orthogonal transformation.
 \newblock {\em arXiv preprint arXiv:1602.07572\/}.}
 
-\noindent \cite{rothe2016ultradense} transform the embedding space of works via optimization of certain dimensions onto known semantic properties.
+\noindent \cite{rothe2016ultradense} transform the embedding space of words via optimization of certain dimensions onto known semantic properties.
 This amounts to reducing the 300 or so dimensions typically used for vector space embedding into less than three dimensions.
 They apply Stochastic Gradient Descent (SGD) to learn a transformation $Q$ that orthogonalizes the embedding matrix $A$ under the constraint of establishing a sentiment dimension.
-This approach is more successful than embedding words directly into such a low dimension space, agreeing with previous work that has show vector embedding performs best with more than 100 dimensions, while extracting the relevant semantic information for sentiment analysis.
+This approach is more successful than embedding words directly into such a low dimension space, agreeing with previous work that has shown vector embedding performs best with more than 100 dimensions, while extracting the relevant semantic information for sentiment analysis.
 For lexicon creation, their approach labeled ``Densifier'' achieves the statistically significant best performance on SemEval 2015 Task 10E with Kendall's $\tau$ of .654.\\
 
 Altogether, these approaches provide a roadmap and demonstrate the possibility of constructing a high-quality, general purpose, phrase based sentiment dictionary.
@@ -729,7 +729,7 @@ Since tag clouds by wordle have random layouts, improvements that incorporate re
 In \cite{schrammel2009semantically} they compare the performance and likability of four approaches: alphabetic, random, similarity on Flickr, and distance in WordNet.
 From 64 participants, they find that ``semantically clustered tag clouds can provide improvements over random layouts in specific search tasks and that they tend to increase the attention towards tags in small fonts compared to other layouts''.
 
-In \cite{lohmann2009comparison} tag cloud layouts are compared on three tags and results show that there is no single best layout.
+In \cite{lohmann2009comparison} tag cloud layouts are compared on three tasks and results show that there is no single best layout.
 The three tasks they test and the best layout for each are:
 \begin{itemize}
 \item Finding a specific tag: Sequential layout with alphabetical sorting.\vspace{-12pt}
@@ -749,7 +749,7 @@ Moving beyond tag clouds, we briefly present word shift graphs in the next secti
 
 An indispensable, scientific tool for visualizing text analysis is the word shift graph.
 The graph was first designed and put to use by \cite{dodds2009b} to understand the result of sentiment analysis.
-An online, interactive version of the graphs are used widely at \href{http://hedonometer.org}{hedonometer.org}, and more details on the use of these graphs is available at \href{http://www.uvm.edu/storylab/2014/10/06/hedonometer-2-0-measuring-happiness-and-using-word-shifts/}{compstorylab.org}.
+An online, interactive version of the graphs is used widely at \href{http://hedonometer.org}{hedonometer.org}, and more details on the use of these graphs are available at \href{http://www.uvm.edu/storylab/2014/10/06/hedonometer-2-0-measuring-happiness-and-using-word-shifts/}{compstorylab.org}.
 The important difference between the word shift graph and tag cloud is that the word shift graph uses both spatial dimensions meaningfully, encoding the ranking of words in the vertical direction and the relevant statistical value in the horizontal direction, enabling comparison between the values.
 We present a closer examination of an example word shift graph in Figure \ref{fig:emilyclimatewordshiftexplainer}.
 
@@ -904,7 +904,7 @@ In Chapter~\ref{chap:emotional-arcs} we consider previous work that finds betwee
 Of these, the work of \cite{campbell1991a} has gained popular attention as a result of the expositions of Dan Harmon in writing the show \textit{Community} \citep{raftery2011harmon}.
 In a series of online posts, Harmon elaborates on the ``monomyth'' and its incorporation into the writing of the \textit{Star Wars} movies \citep{volger1992writer}.
 The plot here is cyclical, and therefore represented on a circle, and the argument goes that all well constructed plots can be arranged to fit into this mold.
-The basic circle consists of 8 locations, starting and ending in the same place, and show a labeled visualization of these locations in Figure \ref{fig:harmon}.
+The basic circle consists of 8 locations, starting and ending in the same place, and we show a labeled visualization of these locations in Figure \ref{fig:harmon}.
 
 %% \begin{figure}[tbp!]
 %%   \centering
@@ -939,12 +939,12 @@ It is precisely this shortcoming which we hope to address, by using a broad coll
 \label{subsec:SIG-diagrams}
 
 With the distinction between plot, structure, and emotional trajectory in mind, there have also been attempts to discover plot using data driven methods.
-\cite{brewer1980event} makes the distinction between plot and structure is made even clearer.
+\cite{brewer1980event} makes the distinction between plot and structure even clearer.
 Through experimentation with different structures, Brewer and Lichtenstein find that the resulting affect in readers is different, with some structures being considered stories and others not (the authors single out ``suspense and resolution'' and ``surprise and resolution'' as indicative of stories).
 
 Plot units were first introduced by \cite{lehnert1981plot}, and form the basis for most all efforts that follow.
 
-Using topic modeling, both \cite{schmidt2015plot} and \cite{jockers2013macroanalysis} find known patterns of plot across many thousand stories.
+Using topic modeling, both \cite{schmidt2015plot} and \cite{jockers2013macroanalysis} find known patterns of plot across many thousands of stories.
 In \cite{piper2015novel}, computational analysis is applied to realize the potential of distant reading (a term owing to \cite{moretti2013distant}) to find and test scholarly insights.
 In \cite{winston2011strong}, a system called ``Genesis'' is developed to compare plot summaries and infer causal connections between events, with the broad aim of the system formalized as the \textit{Strong Story Hypothesis}:
 \begin{quote}
@@ -957,7 +957,7 @@ Work by \cite{regneri2010learning} learns event scripts from written description
 
 The Analogical Story Merging (ASM) system is developed using ``Bayesian model merging'' for story categorization and is applied to 15 Russian folktales \citep{finlayson2011learning}.
 The test folktales are annotated for 18 aspects of meaning by 12 annotators using a tool developed for this task.
-The folktale categories defined by Vladmir Propp are predicted by ASM and the system achieves a Rand Index of 0.511 (a measure of the similarity between clusters).
+The folktale categories defined by Vladimir Propp are predicted by ASM and the system achieves a Rand Index of 0.511 (a measure of the similarity between clusters).
 
 In \cite{elson2012detecting} a Story Intention Graph (SIG) is developed to model stories and implemented to measure similarity and analogy.
 Elson's propositional similarity metric is used to predict human judgments of story similarity and outperforms human annotation (is better than inter-annotator agreement) on Aesop's fables.
@@ -970,7 +970,7 @@ In \textit{Novel Devotions: Conversional Reading, Computational Modeling, and th
 
 \subsection{Story generation}
 
-In \textit{Plot Induction and Evolutionary Search for Story Generation}, \cite{mcintyre2010plot} build upon their previous work to train a story planner from extracted events, their participants, and preceding relationships from a large corpus. Their system is used to to generate simple, 4 or 5 sentences stories that are mildly coherent.
+In \textit{Plot Induction and Evolutionary Search for Story Generation}, \cite{mcintyre2010plot} build upon their previous work to train a story planner from extracted events, their participants, and preceding relationships from a large corpus. Their system is used to generate simple, 4 or 5 sentence stories that are mildly coherent.
 
 The Neukom Institute at Dartmouth hosts a competition for algorithms to produce short stories, in a true-fashion Turing test \citep{digilit2016}.
 In the 2016 competition, algorithms and writers were given a one-word prompt and tasked to write a 500-word short story.
@@ -992,7 +992,7 @@ Below we highlight work that has caught our attention.
 \cite{elson2010extracting} use character name chunking, quoted speech attribution and conversation detection to generate character networks from a collection of British novels.
 They find a lack of support for characterizations provided by literacy scholars and suggest an alternative explanation.
 Namely, the do not find support for the hypothesis that 19th century fiction novels have (1) social networks that differ by the setting of the novel (rural vs. urban) and that (2) novels with more characters have less dialogue (an inverse relationship is suggested by the so-called ``chronotype'' theories).
-Instead they find that the point of view of narration (first vs. third person) is strongly correlated with the 
+Instead they find that the point of view of narration (first vs. third person) is strongly correlated with the cohesion, interconnectedness, and balance of the social network, with third-person narration yielding more tightly connected and conversational networks.
 This work applies the distant reading philosophy by first carefully selecting a corpus of books and consulting previous literary research before doing analysis, an approach we aspire to emulate.
 Elson later extended this work with models of discourse \citep{elson2012modeling}.
 
@@ -1004,12 +1004,12 @@ They are able to automatically detect the roles of characters within 10 folktale
 These methods have also been used to examine popular culture.
 In a blog post, \cite{gabasova2015star-blog} finds the most central character in Star Wars.
 \cite{xanthos2016visualising} elaborate on the method of constructing and visualizing character networks, an example of their work for Shakespeare is available as a poster: \href{http://www.martingrandjean.ch/network-visualization-shakespeare/}{http://www.martingrandjean.ch/network-visualization-shakespeare/}.
-\cite{min2016narrative} perform an in-depth study of Victor Hugo's \textit{Les Misérables}, proposing using the growth of edges in and characters in the network over time to compare different works (with each edge/character curve normalized to sum to 1 at the end of each book).
-More recently, \cite{wu2016interactive} has made an interactive exploration of the play Hamilton using discourse and the character network, and Meeks and Averick built an interactive exploration of the dialogue in the show Archer \citep{meeks2017data}
+\cite{min2016narrative} perform an in-depth study of Victor Hugo's \textit{Les Misérables}, proposing using the growth of edges and characters in the network over time to compare different works (with each edge/character curve normalized to sum to 1 at the end of each book).
+More recently, \cite{wu2016interactive} has made an interactive exploration of the play Hamilton using discourse and the character network, and Meeks and Averick built an interactive exploration of the dialogue in the show Archer \citep{meeks2017data}.
 
-To compare character networks across movies, \cite{ruths2016force} uses network alignment to map characters between the \textit{Stars Wars} movies \textit{The Force Awakens} and \textit{A New Hope} revealing both expected and surprising similarities.
+To compare character networks across movies, \cite{ruths2016force} uses network alignment to map characters between the \textit{Star Wars} movies \textit{The Force Awakens} and \textit{A New Hope} revealing both expected and surprising similarities.
 For example R2-D2 maps to BB-8 and Chewbacca maps to Chewbacca, as we might expect.
-However, the main characters have more surprising alignments from the interaction networks, with Luke mapping to Poe, Obi-wan mapping to Kylo Ren, and Darth Vader mapping Rey.
+However, the main characters have more surprising alignments from the interaction networks, with Luke mapping to Poe, Obi-wan mapping to Kylo Ren, and Darth Vader mapping to Rey.
 A particular problem in using character networks that span an entire movie, TV show, or book is that multiple story lines can intersect in ways that are not accounted for by the method.
 \cite{bost2016narrative} examine conversation in TV shows using a smoothing of narration to overcome the multiple narrative problem, finding protagonists more readily than using simpler interaction networks.
 
@@ -1026,7 +1026,7 @@ Next, we very briefly highlight some of these approaches, focusing particularly 
 In a series of papers \cite{chambers2007classifying,chambers2008unsupervised,chambers2009unsupervised,chambers2010database,chambers2013event} set to classify temporal relations between events, apply unsupervised learning to detect narrative event chains and entities involved, build a database of narrative schemata, and find schemata in large corpora with probability-based models.
 A narrative event chain is defined as two events linked by a common actor.
 Event chains are identified in text through co-reference between a single entity, ordered by a trained classifier, and all possible event chains are restricted through a clustering approach in \cite{chambers2007classifying,chambers2008unsupervised}.
-Both \cite{cheung2013probabilistic} (using the proposed approach of \cite{oconnor2013learning}) and \cite{chambers2013event} utilize generative models for inducing event schemata, with the former utilizing a HMM over latent event variables and the latter using a entity-driven model.
+Both \cite{cheung2013probabilistic} (using the proposed approach of \cite{oconnor2013learning}) and \cite{chambers2013event} utilize generative models for inducing event schemata, with the former utilizing an HMM over latent event variables and the latter using an entity-driven model.
 Recent work from \cite{pichotta2015learning} improves on the baseline results of Chambers in detecting scripts using Recurrent Neural Networks (RNNs, particularly a flavor known as Long Short Term Memory (LSTM)) and architectures adapted to this task.
 
 Corpora used by Chambers and by others include the FrameNet from \cite{baker1998berkeley}, Timebank Corpus from \cite{pustejovsky2003timebank}, Opinion Corpus from \cite{mani2006machine}, Narrative Schema Database from \cite{chambers2010database}, the Media Frames Corpus by \cite{card2015media}, and most recently the Story Cloze Dataset from \cite{mostafazadeh2016corpus}.
@@ -1037,8 +1037,8 @@ The understanding and generation of stories with these data sets and new models 
 %% %% not the same...metaphor
 %% \cite{shutova2011computational} developed a data-driven system for finding and interpreting mataphors and figurative language, performing an assessment of the methodology within a metonymy task.
 
-Along those lines, stories have been explored as a model to training artificial intelligence systems for commonsense reasoning.
-Advanced in this area all recognize and leverage the utility of stories for sense-making \citep{bex2010persuasive,bex2013values,li2012crowdsourcing,riedl2016computational}.
+Along those lines, stories have been explored as a model for training artificial intelligence systems for commonsense reasoning.
+Advances in this area all recognize and leverage the utility of stories for sense-making \citep{bex2010persuasive,bex2013values,li2012crowdsourcing,riedl2016computational}.
 
 %% Values as the point of a story \cite{bex2013values}.
 
@@ -1079,10 +1079,10 @@ Vonnegut explicitly draws a connection between the New Testament and Cinderella,
 Other story arcs named by Vonnegut are the ``Man in the Hole'' and the ``Boy meets girl'' arcs.
 
 With the same goal of finding commonalities between stories as \cite{vonnegut1981palm}, in a series of blog posts \cite{jockers2014novel} lays out a strategy for generating emotional arcs and eventually finds six story types using hierarchical clustering.
-Our work in Chapter~\ref{chap:emotional-arcs} is an continuation of a very different core methodology that we first propose in \cite{dodds2015human}.
-Though the core methodology is markedly different, we note that Jocker's first blog post appeared 10 days before the pre-print of our paper
+Our work in Chapter~\ref{chap:emotional-arcs} is a continuation of a very different core methodology that we first propose in \cite{dodds2015human}.
+Though the core methodology is markedly different, we note that Jockers' first blog post appeared 10 days before the pre-print of our paper.
 %% , as near-simultaneous discovery so often happens in science when theories are ``ripe''.
-As we note in Chapter~\ref{chap:emotional-arcs} as well, the distinction between plot and emotional arc as well as correct use of using sentiment analysis tools distinguish our contributions from those of \cite{jockers2014novel}.
+As we note in Chapter~\ref{chap:emotional-arcs} as well, the distinction between plot and emotional arc as well as correct use of sentiment analysis tools distinguish our contributions from those of \cite{jockers2014novel}.
 
 Attempts to analyze plot more directly than emotional arc have been increasing in the past few years.
 \cite{cherny2013bones} applies machine learning over a bag-of-words analysis to predict action and sex scenes using Naive Bayes (NB) and Stochastic Gradient Descent (SGD).
@@ -1124,7 +1124,7 @@ We attempt to briefly summarize some of the discussion of prominent scholars in 
 %% \cite{scott2016brownian}
 %% lots in the comments here to respond to and think about...
 
-\cite{bamman2015validity} elaborates on the discussion around on how to measure validity of emotional arcs
+\cite{bamman2015validity} elaborates on the discussion around how to measure validity of emotional arcs.
 \cite{bamman2015validity} goes on to build a survey to perform the validation proposed by \cite{piper2015validation} and \cite{weingart2015not}.
 Bamman's survey for Shakespeare's Romeo and Juliet takes responses from 5 participants on Mechanical Turk for each scene on a -5 to 5 scale along with a free text reasoning for the score.
 We plot the mean of these ratings along with our measure of the emotional arc (the happiness of the words in the play for a sliding window of 10000 words and 200 time points) of the play in Figure \ref{fig:bamman-validation}.
@@ -1157,11 +1157,11 @@ Our own work on emotional arcs (Chapter~\ref{chap:emotional-arcs}) has attracted
 We address the concerns raised in both of these critical takes in our work.
 Drawing directly from the suggestions from Schmidt, we utilize the Library of Congress classification to produce a better selection of texts from Project Gutenberg in our published manuscript, a notable improvement from the pre-print corpus he analyzes.
 In our treatment, we carefully consider the choice of a suitable null hypothesis to test whether there is structure in the emotional arcs of real stories.
-Our first pass used the emotional arcs of the same books with randomly shuffled words (``word salad'' books), for a corpora that has no narrative structure but the same emotional words.
+Our first pass used the emotional arcs of the same books with randomly shuffled words (``word salad'' books), for a corpus that has no narrative structure but the same emotional words.
 The final version of our null model generates stories from a bigram Markov chain trained on the actual text.
 These ``nonsense'' narratives have no real structure, but resemble written English.
 For more complete details and sample text from each method, see Section \ref{sec:construction}.
-Other reasonable attempts could consider shuffling sentences of paragraphs, however Brownian noise and arbitrary random walks are not sensible comparisons.
+Other reasonable attempts could consider shuffling sentences or paragraphs, however Brownian noise and arbitrary random walks are not sensible comparisons.
 In particular, the singular value spectrum of Brownian noise is arbitrary.
 
 In the next Chapter, we test sentiment analysis methods for performance in classification and providing understanding of emotional text, methods that form the basis of our study into emotional arcs.
