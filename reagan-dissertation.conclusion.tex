@@ -11,13 +11,13 @@
 
 \section{Future directions}
 
-First we take a look to the future research around sentiment analysis, emotional arcs, and the related projects we covered in Chapter \ref{chap:contributions}.
+First we take a look at the future research around sentiment analysis, emotional arcs, and the related projects we covered in Chapter \ref{chap:contributions}.
 
 \subsection{Sentiment analysis}
 
 Our work looked in detail at dictionary-based sentiment analysis methodology, focusing on the use of these methods in qualitative and quantitative analysis.
 Immediate directions for the extension of dictionary based methods can examine the creation and use of dictionaries that offer (1) many emotions (Section \ref{subsec:psychology}), (2) MWEs (Section~\ref{subsec:mwe}), (3) multiple word senses (Section~\ref{subsec:wsd}), and (4) corpus-specific tuning.
-We reviewed automated methods to build corpus-specific dictionaries in Section \ref{subsec:prev-propagation}, and while most approaches are low precision, we identified directions for that provide the highest precision and recall.
+We reviewed automated methods to build corpus-specific dictionaries in Section \ref{subsec:prev-propagation}, and while most approaches are low precision, we identified directions that provide the highest precision and recall.
 Combining automated (machine learning, propagation-based) approaches with MWEs, word senses, and many emotions will provide many opportunities for the study of the sentiment properties of language and the improvement of sentiment analysis.
 
 In addition to the improvement of the dictionaries, many unanswered questions remain around the visualization of sentiment analysis measures.
@@ -25,10 +25,10 @@ We reviewed some approaches in Section \ref{subsec:vis} and reiterate that futur
 
 \subsection{Emotional arcs}
 
-Here we enumerate some directions for research on emotional arcs in addition those mentioned at the end of Chapter 3 (see Section \ref{sec:arcs-conclusion}).
+Here we enumerate some directions for research on emotional arcs in addition to those mentioned at the end of Chapter 3 (see Section \ref{sec:arcs-conclusion}).
 
 The emotional arcs of movies could be considered as a feature driving once controversial movies towards normalization over time, a closer examination of the trend presented by \cite{amendola2015evolving}.
-Various studies have examined the changes in the valence of language over time, and in a similar fashion this will be possible to see how the emotional trajectories of stories has changed.
+Various studies have examined the changes in the valence of language over time, and in a similar fashion this will be possible to see how the emotional trajectories of stories have changed.
 
 The emotional arc of a book can be used to predict the Library of Congress classification, using fiction and non-fiction separately to demonstrate the applicability of emotional arcs.
 In particular, one could feed the coefficient vector from the SVD projection for the first $n$ modes into a predictor and see how much predictive power is contained in each mode, and exploring $n$ can provide additional testing of how explanatory the first 6 modes are.
@@ -37,20 +37,20 @@ Clustering on the emotional arc embedding vector would show whether these groups
 Extending the approach of \cite{bamman2015validity} and the validation shown in Figure \ref{fig:bamman-validation}, it will remain important to keep people in the loop of the analysis of emotional arcs, since it is our reaction to stories that is being measured.
 A follow-up project to our work on emotional arcs could build a more complete user study to examine the human aspect of emotion in narrative more directly.
 
-We broadly examined the the forefront of NLP research (Section \ref{subsec:nlp}), and can use the advancing methods to answer such questions as ``is a character good or bad?''.
+We broadly examined the forefront of NLP research (Section \ref{subsec:nlp}), and can use the advancing methods to answer such questions as ``is a character good or bad?''.
 The analysis of character networks (Section \ref{subsec:characters}) will continue to improve with identification of the nature of relationships, and the events for particular characters (e.g., birth, marriage, death, and the associated sentiments).
 
-Connecting the scripts, frames, and SIG-like approaches (see Section~\ref{subsec:SIG-diagrams} and Section~\ref{subsec:frames-NLP}) to narrative more directly to the emotional arcs will be provide a finer-grained emotional arc representation, connected to the events in a narrative.
+Connecting the scripts, frames, and SIG-like approaches (see Section~\ref{subsec:SIG-diagrams} and Section~\ref{subsec:frames-NLP}) to narrative more directly to the emotional arcs will provide a finer-grained emotional arc representation, connected to the events in a narrative.
 This approach will in-part realize the jump from a bag-of-words to a bag-of-stories approach to natural language.
-As neural network approaches pust the state-of-the-art in NLP, there may be utility to considering architectures that have an explicit representations of abstraction levels.
-This approach is analagous to the Convolution Neural Network (CNN) architecture that has proven successful in image recognition tasks.
+As neural network approaches push the state-of-the-art in NLP, there may be utility to considering architectures that have explicit representations of abstraction levels.
+This approach is analogous to the Convolution Neural Network (CNN) architecture that has proven successful in image recognition tasks.
 An example structure to build upon is the Historical Thesaurus of English \citep{kay2009historical}, as is done by \cite{alexander2015metaphor}.
 In contrast to this proposed approach, the ``automatic'' feature selection (magic) of neural networks remains powerful \citep{1704.01444}.
 
 \subsection{Other projects}
 
 We have shown that it is possible to build population scale measures of well-being and public health.
-The Hedonometer and the Lexicocalorimeter can be utilized as only two of many broad measures that extend our dashboard of societal indicators; such additional  ``meters'' of general interest that the Computational StoryLab has considered include such tools as an ``insomniometer''.
+The Hedonometer and the Lexicocalorimeter can be utilized as only two of many broad measures that extend our dashboard of societal indicators; such additional ``meters'' of general interest that the Computational StoryLab has considered include such tools as an ``insomniometer''.
 Considering the Lexicocalorimeter, taking these lexical meters from snapshot-in-time analysis to real-time feeds remains a difficult challenge that has been accomplished with \href{http://hedonometer.org/}{http://hedonometer.org/} and can be extended to additional meters.
 
 There are many improvements possible for the visualizations hosted online at \href{http://teletherm.org/}{http://teletherm.org/}.
@@ -62,13 +62,13 @@ In addition, it will be possible to extend the teletherm project to incorporate 
 \section{Parting thoughts}
 
 Narratives are not unique in their explanation of causal links between events, and often the ``adjacent narratives'' are in direct competition.
-We saw in Section \ref{subsec:frames-NLP} that the the disambiguation of competing event chains is an active area of NLP research.
+We saw in Section \ref{subsec:frames-NLP} that the disambiguation of competing event chains is an active area of NLP research.
 This is identified as one factor contributing to information overload on the Internet \citep{orman2015information}, and participating in a collective cognitive denial of service attack \citep{king2016chinese}.
 We are biased to seeing the world through narratives that have the most support from our existing experiences.
 Embodied in the principle of Occam's Razor, we often prefer stories that are the simplest.
-This premise is explored anecdotally \citep{storr2014unpersuadables}, and the competition between competing narratives is a new avenue for computation study.
+This premise is explored anecdotally \citep{storr2014unpersuadables}, and the competition between competing narratives is a new avenue for computational study.
 
-The use of narratives in science belies an understanding of natural phenomena through metaphor, the consequences of stories in science has been examined by \cite{mahoney2006tale,levy2008case,collier2011understanding,gelman2014stories}.
+The use of narratives in science belies an understanding of natural phenomena through metaphor, the consequences of stories in science have been examined by \cite{mahoney2006tale,levy2008case,collier2011understanding,gelman2014stories}.
 Narrative itself has been in the spotlight, being put forth to frame the decisions of economists in times of crisis and related to the political functions of democratic elections \citep{shriller2017narrative}.
 
 Every-day causality and personal narrative build upon a fundamental assumption of personal agency and free will.

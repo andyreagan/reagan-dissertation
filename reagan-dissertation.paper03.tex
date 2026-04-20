@@ -37,7 +37,7 @@ Additionally and at the request of the reviewers, I performed the statistical te
 In addition to testing for support of power law distributions using the MLE estimator \cite{clauset2009b}, I ran likelihood comparison tests across many distributions, which we argue in the manuscript are potentially more applicable here to determine the most appropriate distribution.
 In Figure 
 The parameters for the various distributions mentioned in the paper are written using LaTeX variables, written in a .tex file by the MATLAB and Python scripts that perform the statistical procedures.
-To the extend possible, all figures and analysis can be reproduced by running a single script.
+To the extent possible, all figures and analysis can be reproduced by running a single script.
 In this Section we include a reprint of Figure 1, Figure S1, and the power law fit tables from the paper.
 The codebase for creating the figures and performing the statistical procedures is available at \href{https://github.com/andyreagan/philanthropy-distributions-code}{https://github.com/andyreagan/philanthropy-distributions-code}.
 
@@ -96,8 +96,8 @@ The format is one or two days of everyone in the same room, brain storming how t
 An outline of the paper is written, and after the event each member works to complete their part in carrying out the research idea.
 My responsibility was to build reciprocal reply networks from Twitter data, in an effort to measure information flow over the network.
 The network construction proceeded in three steps: (1) build a network using replies, (2) measure information flow over this reciprocal reply network, and (3) collect edges in the network for the actual information flow.
-Each step of the construction would be carried out over a number of days, and using a single note on the VACC, we were able to build networks in memory for a total of 9 days.
-These 9 days were considered for combinations 3/3/3 or 4/4/1 days, respectively.
+Each step of the construction would be carried out over a number of days, and using a single node on the VACC, we were able to build networks in memory for a total of 9 days.
+These 9 days were considered for combinations of 3/3/3 or 4/4/1 days, respectively.
 These data were used in a real world test, to accompany testing of simulated data.
 
 \section{Human language reveals a universal positivity bias}
@@ -356,7 +356,7 @@ the patterns of Teletherm dynamics at both a local and a regional level.
 In addition to building interactive versions of the US maps, I worked with
 Professor Dodds to design novel visualizations for the individual station teletherm dynamics.
 These plots are shown in Figure \ref{fig:teletherm-splat}, and accompany visualizations of
-the time dynamics of Teletherm days, extends, and temperatures.
+the time dynamics of Teletherm days, extents, and temperatures.
 The online source code repository is publicly available at \href{https://github.com/andyreagan/teletherm.org}{https://github.com/andyreagan/teletherm.org}.
 
 %% The final tool provided at \href{http://teletherm.org/}{http://teletherm.org/} is a
@@ -365,8 +365,8 @@ The online source code repository is publicly available at \href{https://github.
   \centering
   \includegraphics[width=0.96\textwidth]{figures/teletherm-002.png}
   \caption[]{
-    Teletherm dials shows the yearly temperature dynamics for a single location over a period of time, and time series below show the trends for both temperature extremes and teletherm dates.
-    The min and max temperature for each day of the year are smoothed over three 25 year windows, one for each dial, and show in blue and red, respectively.
+    Teletherm dials show the yearly temperature dynamics for a single location over a period of time, and time series below show the trends for both temperature extremes and teletherm dates.
+    The min and max temperature for each day of the year are smoothed over three 25 year windows, one for each dial, and shown in blue and red, respectively.
     As in the paper, the smoothed temperature is computed with a Gaussian kernel smoothing over the average min/max over days of the year.
     To avoid issues with the boundary, to compute the Gaussian kernel the temperature is wrapped on both ends of the year (with the same data).
     Summer and winter solstice are shown with icons, and the details of the day of year are shown in the upper right of each dial (over which the hover is linked between each dial---they all move together).
@@ -445,7 +445,7 @@ keywords = [{"re": re.compile(r"#blacklivesmatter\b",flags=re.IGNORECASE)}},
             {"re": re.compile(r"#templeton\b",flags=re.IGNORECASE)},]
 \end{python}
 
-After collect the Tweets for these hashtags, they were reorganized by user, and then collected into a \verb|sqlite| database using Django, a Python web framework.
+After collecting the Tweets for these hashtags, they were reorganized by user, and then collected into a \verb|sqlite| database using Django, a Python web framework.
 This web framework was then used to go back and collect the most recent 3,200 Tweets from each public Twitter account that we had found in our initial search.
 The collection ended on Nov 25th, 2015, so these Tweets were the 3,200 most recent as of that date.
 From this data, we were able to construct the social networks for analysis of the dynamics of these online communities.
