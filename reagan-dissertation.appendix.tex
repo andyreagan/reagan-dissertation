@@ -28,27 +28,45 @@
 
 \chapter{Code for VACC Twitter Database Keyword Searches}
 
-In this Appendix we describe a strategy for utilizing the computational resources available at the University of Vermont's supercomputing center for searching through Twitter data.
+In this Appendix we describe a strategy for utilizing the computational resources available at the University of Vermont's 
+supercomputing center for searching through Twitter data.
 A schematic of the general approach is provided below in Figure~\ref{fig:keyword-search}.
-We provide scripts for a minimum working example of this approach online at \href{https://github.com/andyreagan/VACC-keyword-search}{https://github.com/andyreagan/VACC-keyword-search}.
+We provide scripts for a minimum working example of this approach online at 
+\href{https://github.com/andyreagan/VACC-keyword-search}{https://github.com/andyreagan/VACC-keyword-search}.
 
-The basic approach is to use the cron scheduler to make sure that around 100--150 jobs are running all the time.
-Each job is short, processing at most an hour of Tweets, so that each job takes less time to run and can utilize the shortq, which has a limit of 200 jobs that run immediately under most circumstances.
+The basic approach is to use the cron scheduler to make sure that around 
+100--150 jobs are running all the time.
+Each job is short, 
+processing at most an hour of Tweets, 
+so that each job takes less time to run and can utilize the shortq, 
+which has a limit of 200 jobs that run immediately under most circumstances.
 
-Cron calls the shell script \verb|cron.sh| directly, and that shell script invokes the Python script \verb|qsub.py| to handle the more complex logic of dates and job submission (which is just easier in Python).
+Cron calls the shell script \verb|cron.sh| directly, 
+and that shell script invokes the Python script \verb|qsub.py| 
+to handle the more complex logic of dates and job submission 
+(which is just easier in Python).
 The work of looking through Tweets happens in \verb|processTweets.py|.
-By utilizing pipes and unzipping from disk directly into Python, no unzipped files are written to disk (this would be prohibitively slow and use too much storage).
-Instead, just the minimum necessary output from the search is written to disk, by Python.
+By utilizing pipes and unzipping from disk directly into Python, 
+no unzipped files are written to disk 
+(this would be prohibitively slow and use too much storage).
+Instead, 
+just the minimum necessary output from the search is written to disk, 
+by Python.
 
 To make this run for new keywords, do the following:
 \begin{enumerate}
-\item Edit the keywords in \verb|processTweets.py|.
-\item Set the start date in \verb|currdate.txt|.
-\item Create folders for the keywords (manually, or using \verb|makeFolders| function from the \verb|processTweets.py| script). Including the base \verb|raw-tweets| folder.
-\item Instantiate a virtual environment. It is called set it up in the job script submitted by \verb|qsub.py|, and in the \verb|cron.sh| to call \verb|qsub.py|. (Or don't use one, at your own peril!).
-\item Edit the folders in \verb|cron.sh| and \verb|qsub.py| to where this is running.
-\item Add the script \verb|cron.sh| to your crontab.
-\item Profit.
+  \item Edit the keywords in \verb|processTweets.py|.
+  \item Set the start date in \verb|currdate.txt|.
+  \item Create folders for the keywords 
+        (manually, or using \verb|makeFolders| function from the \verb|processTweets.py| script). 
+        Including the base \verb|raw-tweets| folder.
+  \item Instantiate a virtual environment. 
+        It is utilized by job script submitted by \verb|qsub.py|, 
+        and by the \verb|cron.sh| to call \verb|qsub.py|.
+        (Or don't use one, at your own peril!).
+  \item Edit the folders in \verb|cron.sh| and \verb|qsub.py| to where this is running.
+  \item Add the script \verb|cron.sh| to your crontab.
+  \item Profit.
 \end{enumerate}
 
 Using the commands \verb|mmlsquota| and \verb|showq|, you can see your file system usage and track the individual jobs (look at \verb|currdate.txt| for submitted progress).
@@ -58,12 +76,13 @@ Using the commands \verb|mmlsquota| and \verb|showq|, you can see your file syst
   \includegraphics[width=0.95\textwidth]{figures/keyword-search-crop.pdf}
   \caption[]{
     Schematic of the keyword search framework on the Vermont Advanced Compute Cluster.
-    The three core Python files are invoked by the cron scheduler, and the computation is handed off to compute nodes through the PBS schedulers qsub command.
-    An example code base is provided at \href{https://github.com/andyreagan/VACC-keyword-search}{https://github.com/andyreagan/VACC-keyword-search}.
+    The three core Python files are invoked by the cron scheduler, 
+    and the computation is handed off to compute nodes through the PBS schedulers qsub command.
+    An example code base is provided at 
+    \href{https://github.com/andyreagan/VACC-keyword-search}{https://github.com/andyreagan/VACC-keyword-search}.
   }
   \label{fig:keyword-search}
 \end{figure}
-
 
 %% Cron
 %% Python
@@ -89,10 +108,16 @@ Using the commands \verb|mmlsquota| and \verb|showq|, you can see your file syst
 
 \chapter{Infrastructure of Hedonometer.org}
 
-The Hedonometer website at \href{http://hedonometer.org}{http://hedonometer.org} is comprised of three main parts: (1) the web server processing including the base code in Python Django, (2) the data processing on the server, and (3) data processing on the VACC.
+The Hedonometer website at \href{http://hedonometer.org}{http://hedonometer.org} is comprised of three main parts: 
+(1) the web server processing including the base code in Python Django, 
+(2) the data processing on the server, 
+and (3) data processing on the VACC.
 The deployment of the webserver is done using templates and the Ansible tool.
-Settings and detailed instructions for deploying development and production servers are at \href{https://github.com/andyreagan/hedonometer-vagrant-ansible-deployment}{https://github.com/andyreagan/hedonometer-vagrant-ansible-deployment}.
-In Figure~\ref{fig:hedonometer-org} we diagram the web server side of the server, including the deployment settings mentioned above and the Django server linked in the caption.
+Settings and detailed instructions for deploying development 
+and production servers are at 
+\href{https://github.com/andyreagan/hedonometer-vagrant-ansible-deployment}{https://github.com/andyreagan/hedonometer-vagrant-ansible-deployment}.
+In Figure~\ref{fig:hedonometer-org} we diagram the web server side of the server, 
+including the deployment settings mentioned above and the Django server linked in the caption.
 
 \begin{figure}[ht!]
   \centering
@@ -106,21 +131,41 @@ In Figure~\ref{fig:hedonometer-org} we diagram the web server side of the server
 \end{figure}
 
 The data side of the server is run separately from the web server side.
-Nginx serves all files in the \verb|/data| URL ending at Hedonometer, and the files can be browsed at \href{http://hedonometer.org/data/}{http://hedonometer.org/data/}.
-The files here are used in the front end visualizations across the site, and represent files that are loaded for the details-on-demand, as well as the overview files.
+Nginx serves all files in the \verb|/data| URL ending at Hedonometer, 
+and the files can be browsed at \href{http://hedonometer.org/data/}{http://hedonometer.org/data/}.
+The files here are used in the front end visualizations across the site, 
+and represent files that are loaded for the details-on-demand, 
+as well as the overview files.
 The structure is optimized for front end performance.
-The code base is on GitHub at \href{https://github.com/andyreagan/hedonometer-data-munging}{https://github.com/andyreagan/hedonometer-data-munging}.
-As seen in the overall schematic of the server, these files are all inside of \verb|/usr/share/nginx| and they are managed by the \verb|root| user.
+The code base is on GitHub at 
+\href{https://github.com/andyreagan/hedonometer-data-munging}{https://github.com/andyreagan/hedonometer-data-munging}.
+As seen in the overall schematic of the server, 
+these files are all inside of \verb|/usr/share/nginx| and they are managed by the \verb|root| user.
 
-Every hour on the hour, these files are updated by a cascade of processes through the cron scheduler.
-The process is simple enough to do without a diagram: \verb|cron| calls \verb|cronregions.sh| every hour, which simply calls \verb|regions.py| with Python.
-The \verb|regions.py| loops over dates, looks for files in the \verb|word-vectors| folders for each region, and uses \verb|rsync| to copy over the missing files.
-Once whole days are downloaded in the 15-minute pieces, it creates the daily summary files (e.g., \verb|word-vectors/vacc/2017-04-07-sum.csv|) and updates the overall summary at \href{http://hedonometer.org/data/word-vectors/vacc/sumhapps.csv}{http://hedonometer.org/data/word-vectors/vacc/sumhapps.csv} (being wary of duplicates, and keeping the most recent).
+Every hour on the hour, 
+these files are updated by a cascade of processes through the cron scheduler.
+The process is simple enough to do without a diagram: 
+\verb|cron| calls \verb|cronregions.sh| every hour, 
+which simply calls \verb|regions.py| with Python.
+The \verb|regions.py| loops over dates, 
+looks for files in the \verb|word-vectors| folders for each region, 
+and uses \verb|rsync| to copy over the missing files.
+Once whole days are downloaded in the 15-minute pieces, 
+it creates the daily summary files 
+(e.g., \verb|word-vectors/vacc/2017-04-07-sum.csv|) 
+and updates the overall summary at 
+\href{http://hedonometer.org/data/word-vectors/vacc/sumhapps.csv}{http://hedonometer.org/data/word-vectors/vacc/sumhapps.csv} 
+(being wary of duplicates, and keeping the most recent).
 
-The copy of files from the VACC uses \verb|rsync|, which operates over \verb|ssh| and relies on the public key of the server being present on the VACC for seamless access.
-The files on the VACC are created by a separate process, which is managed in much the same way as the keyword searches in the previous appendix.
-The cron scheduler runs every hour on the hour, and submits jobs to the PBS queue that turn 15-minute zipped JSON Tweet files into length 10,222 word vectors.
-The full code for this process is available at \href{https://github.com/andyreagan/hedonometer-VACC-processing}{https://github.com/andyreagan/hedonometer-VACC-processing}.
+The copy of files from the VACC uses \verb|rsync|, 
+which operates over \verb|ssh| 
+and relies on the public key of the server being present on the VACC for seamless access.
+The files on the VACC are created by a separate process, 
+which is managed in much the same way as the keyword searches in the previous appendix.
+The cron scheduler runs every hour on the hour, 
+and submits jobs to the PBS queue that turn 15-minute zipped JSON Tweet files into length 10,222 word vectors.
+The full code for this process is available at 
+\href{https://github.com/andyreagan/hedonometer-VACC-processing}{https://github.com/andyreagan/hedonometer-VACC-processing}.
 
 %% In this Appendix we document the processes that comprise the real-time
 %% visualization of Twitter happiness at Hedonometer.org.
